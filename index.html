@@ -16,44 +16,138 @@
   --brand-mela: #A4DE02;
   --brand-crema: #FFF5E1;
   --brand-blu: #4D9DE0;
+  --brand-notte: #1F2A44;
   --brand-miele: #F6D776;
+  --brand-notte-morbido: #213555;
   --brand-azzurro: #B0DAF5;
+  --brand-polvere: #2E2E2E;
   --font-primary: 'Nunito', sans-serif;
   --font-important: 'Fredoka', arial;
+
+  /* Colori sfumati per il bordo */
+  --shadow-color: rgba(0, 0, 0, 0.6); /* Ombra in basso a destra */
 }
 
 body {
     font-family: var(--font-primary);
     color: var(--primary-color);
+    background-color: rgb(175, 184, 174);
+    background-image:
+        radial-gradient(circle, rgba(255, 255, 255, 0.04) 10%, transparent 10%),
+        radial-gradient(circle, rgba(0, 0, 0, 0.1) 8%, transparent 8%);
+    background-size: 10px 10px, 30px 30px;
+    background-blend-mode: overlay;
 }
 
 h1 {
   font-family: var(--font-important);
 }
 
-.arancio {
+/* 📌 Bottone interattivo con effetto materico */
+.button-3d {
+    display: inline-block;
+    padding: 20px 40px;
+    border-radius: 30px;
+    box-shadow: 15px 15px 25px var(--shadow-color);
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    background-color: var(--primary-color);
     color: var(--brand-arancio);
+    border: none;
+    outline: none;
+
+    /* Effetto texture pixelata */
+    background-image:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.04) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.04) 50%, rgba(255, 255, 255, 0.04) 75%, transparent 75%, transparent),
+        radial-gradient(circle, rgba(255, 255, 255, 0.06) 10%, transparent 10%);
+    background-size: 5px 5px, 20px 20px;
 }
 
-.mela {
-    color: var(--brand-mela);
+/* Bordo sfumato */
+.button-3d::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), transparent 50%, transparent 70%, var(--shadow-color));
+    -webkit-mask: linear-gradient(white, white) content-box, linear-gradient(white, white);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    pointer-events: none;
 }
 
-.crema {
-    color: var(--brand-crema);
+/* Effetto hover per maggiore profondità */
+.button-3d:hover {
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.8);
+    transform: translate(2px, 2px);
 }
 
-.blu {
-    color: var(--brand-blu);
+/* 📌 Effetto pressione quando viene premuto */
+.button-3d:active {
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6) inset, 8px 8px 15px var(--shadow-color);
+    transform: translate(2px, 2px) scale(0.98); /* Simula compressione */
+    border-radius: 28px; /* Appiattisce leggermente gli angoli */
 }
 
-.miele {
-    color: var(--brand-miele);
+
+/* 📌 Box Pongo - Statico, effetto liquido */
+.pongo-box {
+/*    display: inline-block;*/
+    padding: 20px 50px;
+    border-radius: 40px;
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.4);
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    outline: none;
+    cursor: default;
+    
+    /* Effetto plastico e liquido */
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.2) 10%, transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(0, 0, 0, 0.1) 10%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15) 15%, transparent 50%);
+    background-size: cover;
 }
 
-.azzurro {
-    color: var(--brand-azzurro);
+/* Bordo sfumato del pongo */
+.pongo-box::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), transparent 30%, transparent 70%, rgba(0, 0, 0, 0.5));
+    -webkit-mask: linear-gradient(white, white) content-box, linear-gradient(white, white);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    pointer-events: none;
 }
+
+.arancio { color: var(--brand-arancio); }
+.mela { color: var(--brand-mela); }
+.crema { color: var(--brand-crema); }
+.blu { color: var(--brand-blu); }
+.miele { color: var(--brand-miele); }
+.azzurro { color: var(--brand-azzurro); }
+
+.box-primary { background-color: var(--primary-color); color: var(--brand-arancio); }
+.box-arancio { background-color: var(--brand-arancio); color: var(--brand-crema); }
+.box-mela { background-color: var(--brand-mela); color: var(--brand-blu); }
+.box-crema { background-color: var(--brand-crema); color: var(--primary-color); }
+.box-blu { background-color: var(--brand-blu); color: var(--brand-notte); }
+.box-miele { background-color: var(--brand-miele); color: var(--brand-polvere); }
+.box-azzurro { background-color: var(--brand-azzurro); color: var(--brand-notte-morbido); }
+
     </style>
 
   </head>
@@ -66,6 +160,12 @@ h1 {
     <div class="blu">Blu</div>
     <div class="miele">Miele</div>
     <div class="azzurro">Azzurro</div>
+
+
+
+    <div class="container">
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>
