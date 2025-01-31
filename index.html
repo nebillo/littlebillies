@@ -5,9 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+    <style>
+:root {
+  --primary-color: #3a3a3a;
+  --brand-arancio: #FF8C42;
+  --brand-mela: #A4DE02;
+  --brand-crema: #FFF5E1;
+  --brand-blu: #4D9DE0;
+  --font-primary: 'Nunito', sans-serif;
+  --font-important: 'Fredoka', arial;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--primary-color);
+}
+
+h1 {
+  font-family: var(--font-important);
+}
+
+.arancio {
+    color: var(--brand-arancio);
+}
+
+.mela {
+    color: var(--brand-mela);
+}
+
+.crema {
+    color: var(--brand-crema);
+}
+
+.blu {
+    color: var(--brand-blu);
+}
+    </style>
+
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <h1>Little Billies</h1>
+    <h2>Il baby album</h2>
+    <div class="arancio">Arancio</div>
+    <div class="mela">Mela</div>
+    <div class="crema">Crema</div>
+    <div class="blu">Blu</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>
