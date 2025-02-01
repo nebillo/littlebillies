@@ -20,31 +20,38 @@
 body {
     font-family: var(--font-primary);
     color: var(--primary-color);
+}
+
+.body-background {
+    position: fixed; /* Rende il layer fisso */
+    width: 100%;
+    height: 100vh; /* Usa l'intera altezza della viewport */
+    pointer-events: none; /* Evita che blocchi clic e interazioni */
+    z-index: -2; /* Permette ai contenuti di stare sopra di esso */
     background-color: var(--primary-bg);
     background-image:
         radial-gradient(circle, rgba(255, 255, 255, 0.04) 10%, transparent 10%),
         radial-gradient(circle, rgba(0, 0, 0, 0.1) 8%, transparent 8%);
     background-size: 10px 10px, 30px 30px;
     background-blend-mode: overlay;
-    position: relative; /* Mantiene il riferimento per il layer superiore */
-    overflow-x: hidden;
+/*    position: relative;*/
+/*    overflow-x: hidden;*/
 }
 
-/* Layer sopra al cuoio con immagini */
 .top-floating-layer {
-    position: absolute;
+    position: fixed; /* Rende il layer fisso */
     top: calc(70px + 1rem); /* Altezza dinamica: navbar + margine */
     left: 0;
     width: 100%;
-    height: 100%; /* Assegna un'altezza fissa o dinamica */
+    height: 100vh; /* Usa l'intera altezza della viewport */
     pointer-events: none; /* Evita che blocchi clic e interazioni */
-    z-index: -1; /* Sopra il cuoio, sotto altri elementi */
+    z-index: -1; /* Permette ai contenuti di stare sopra di esso */
     background-image: 
         url('../imgs/top-left.png'), 
         url('../imgs/top-right.png');
     background-position: 
         left 0px top, /* Sinistra, ancorata sotto la navbar */
-        right 0px top; /* Destra, ancorata sotto la navbar */
+        right 0px top; /* Destra, ancorata sotto la navbar */;
     background-repeat: no-repeat, no-repeat;
     background-size: auto;
 }
