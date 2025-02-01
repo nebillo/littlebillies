@@ -145,8 +145,9 @@ h1 {
 
 /* Navbar Custom */
 .navbar {
-    background-color: var(--primary-bg); /* Stesso sfondo del sito */
+    background-color: transparent;
     padding: 15px 20px;
+    filter: drop-shadow(4px 4px 10px white);
 }
 
 .navbar-brand {
