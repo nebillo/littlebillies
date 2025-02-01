@@ -258,13 +258,13 @@ h1 {
   }
 }
 
-/* Immagine floating ancorata in basso a sinistra con offset di 40px dal bordo sinistro */
 .hero-left {
   position: absolute;
   left: 40px;
   bottom: 0;
   filter: drop-shadow(4px 4px 10px black);
 }
+
 /* Immagine floating ancorata in basso a destra con offset di 40px dal bordo destro */
 .hero-right {
   position: absolute;
@@ -278,7 +278,7 @@ h1 {
   padding-bottom: 20px;
 }
 
-.hero-text {
+.hero-footer {
   margin-top: 20px;
 }
 
