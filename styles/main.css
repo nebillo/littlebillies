@@ -245,7 +245,7 @@ h1 {
 .hero-center.rotating {
   position: relative;
   transform-origin: center center;
-  animation: spin 5s linear infinite;
+/*  animation: spin 5s linear infinite;*/
   z-index: 2;
 }
 
@@ -280,6 +280,39 @@ h1 {
 
 .hero-footer {
   margin-top: 20px;
+}
+.img-shadow {
+    filter: drop-shadow(20px 20px 20px rgba(0, 0, 0, 0.6));
+}
+
+.display-1 {
+  font-family: var(--font-important);
+}
+
+.display-3 {
+  font-family: var(--font-important);
+  line-height: 1;
+}
+
+.glance-container {
+    padding-top: 5rem;
+    display: flex;
+    align-items: center;  /* Centra verticalmente */
+    justify-content: center; /* Se vuoi anche il centro orizzontale */
+    min-height: 50vh;
+    width: 90%;
+}
+
+@media (min-width: 768px) { /* Da md in su */
+    .glance-container {
+        width: 80%;
+    }
+}
+
+separator {
+  display: block;  /* Assicura che occupi spazio verticale */
+  height: 5rem;    /* Aggiunge 5rem di spazio verticale */
+  content: "";     /* Per compatibilità con alcuni browser */
 }
 
 .arancio { color: var(--brand-arancio); }
