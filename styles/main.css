@@ -218,7 +218,6 @@ h2 {
 }
 
 .top-container {
-    padding-top: 40px;
     padding-left: 160px;
     padding-bottom: 250px;
 }
@@ -299,7 +298,6 @@ h2 {
 }
 
 .glance-container {
-    padding-top: 5rem;
     display: flex;
     align-items: center;  /* Centra verticalmente */
     justify-content: center; /* Se vuoi anche il centro orizzontale */
