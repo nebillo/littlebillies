@@ -13,12 +13,42 @@
 
     <style>
 
+/* Background personalizzato per ogni sezione */
+[data-bg="planet"] .section-background-content {
+    background-image: 
+        url('imgs/top-left.png'), 
+        url('imgs/top-right.png');
+
+    background-position: left 0px top, right 0px top;
+}
+
+[data-bg="shark"] .section-background-content {
+    background-image: 
+        url('imgs/shark-top-left.png'), 
+        url('imgs/shark-bottom-left.png'), 
+        url('imgs/shark-right.png');
+    background-position: left top, left 3rem bottom, right center;
+}
+
+[data-bg="ciccio"] .section-background-content {
+    background-image: 
+        url('imgs/ciccio-left.png'), 
+        url('imgs/ciccio-top-right.png'), 
+        url('imgs/ciccio-bottom-right.png');
+    background-position: left 3rem center, right top, right bottom;
+}
+
+[data-bg="crepe"] .section-background-content {
+    background-image: 
+        url('imgs/crepe-left.png'), 
+        url('imgs/crepe-right.png');
+    background-position: left top, right bottom;
+}
+
     </style>
 
   </head>
   <body>
-
-    <div class="body-background"></div>
 
     <!-- Navbar fissa in alto -->
     <nav class="navbar navbar-expand-md fixed-top">
@@ -44,165 +74,200 @@
         </div>
     </nav>
 
-    <div class="top-floating-layer"></div>
-
     <separator style="height: 5rem;"></separator>
 
-    <div id="header" class="container top-container">
-      <p class="h3">Ti presentiamo</p>
-      <p class="display-1">Il Baby Album</p>
-    </div>
+    <div class="sections-wrapper">
 
-    <div id="hero" class="container">
-        <div class="custom-container pongo-box box-arancio">
-
-            <div class="hero-background">
-                <!-- Immagine floating in basso a sinistra -->
-                <img src="imgs/hero-left.png" alt="Hero Left" class="hero-left">
-                <!-- Immagine floating in basso a destra -->
-                <img src="imgs/hero-right.png" alt="Hero Right" class="hero-right">
-            </div>
-
-            <div class="hero-container">
-                <!-- Immagine centrata -->
-                <div class="hero-center-wrapper">
-                    <!-- Elemento statico con ombra -->
-                    <img src="imgs/album-vinile.png" alt="Hero Center" class="hero-center fixed">
-                    <!-- Elemento in rotazione -->
-                    <img src="imgs/album-vinile.png" alt="Hero Center" class="hero-center rotating">
-                </div>
-                <div class="hero-footer">
-                    <button class="button-3d box-crema">Scoprilo</button>
-                </div>
-                <!-- <p class="h1 hero-text">Preview!</p> -->
-            </div>
-        </div>
-    </div>
-
-    <separator></separator>
-
-    <div id="album" class="container d-flex flex-column gap-5 align-items-center">
-
-      <div class="pongo-box box-crema glance-container">
-        <div class="container">
-            <!-- Prima riga: si prende il primo terzo di spazio da destra -->
-            <div class="row">
-              <div class="col-md-4 col-12">
-                <img src="imgs/no-sharks.png" class="img-fluid img-shadow">
-              </div>
-              <div class="col-md-1"></div>
-              <div class="col-md-6 col-12 text-start mt-5">
-                <p class="display-3">Squaletti in ascolto, attenzione!</p>
-              </div>
-            </div>
-
-            <!-- Terza riga: si prende l'ultimo terzo di spazio -->
-            <div class="row">
-                <div class="col-md-7"></div> <!-- 40% di spazio vuoto -->
-                <div class="col-md-5 col-12 text-start mt-3">
-                  <p><b>Baby Shark si prende una pausa</b>… È il arrivato il momento di tuffarsi in nuove avventure, tutte da cantare.</p>
+        <section class="section" data-bg="planet">
+            <div class="section-background-wrapper">
+                <div class="section-background">
+                    <div class="section-background-content"></div>
                 </div>
             </div>
-          </div>
-      </div>
-    </div>
+            <div class="section-content container">
+                <div class="row align-items-center">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-3">
+                      <p class="h3">Ti presentiamo</p>
+                      <p class="display-1">Il Baby Album</p>
+                    </div>
 
-    <separator></separator>
+                    <div class="col-md-7 custom-container pongo-box box-arancio">
+                        <div class="hero-background">
+                            <!-- Immagine floating in basso a sinistra -->
+                            <img src="imgs/hero-left.png" alt="Hero Left" class="hero-left">
+                            <!-- Immagine floating in basso a destra -->
+                            <img src="imgs/hero-right.png" alt="Hero Right" class="hero-right">
+                        </div>
 
-    <div id="ricetta" class="container">
+                        <div class="hero-container">
+                            <!-- Immagine centrata -->
+                            <div class="hero-center-wrapper">
+                                <!-- Elemento statico con ombra -->
+                                <img src="imgs/album-vinile.png" alt="Hero Center" class="img-fluid hero-center fixed">
+                                <!-- Elemento in rotazione -->
+                                <img src="imgs/album-vinile.png" alt="Hero Center" class="img-fluid hero-center rotating">
+                            </div>
+                            <div class="hero-footer">
+                                <button class="button-3d box-crema">Scoprilo</button>
+                            </div>
+                        </div>
+                    </div>
 
-      <div class="pongo-box box-miele">
-        <p class="display-3 my-5">La Nostra Ricetta</p>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 text-start">
-                    <h1>📖</h1>
-                    <p><b>Storia Coinvolgente.</b> Ogni canzone è un piccolo viaggio, pieno di sorprese e personaggi indimenticabili.</p>
-                </div>
-                <div class="col-md-4 text-start">
-                    <h1>🔍</h1>
-                    <p><b>Significato Nascosto.</b> Tra rime e melodia, si nascondono dettagli che solo i più attenti sapranno scoprire.</p>
-                </div>
-                <div class="col-md-4 text-start">
-                    <h1>💃</h1>
-                    <p><b>Musica Travolgente.</b> Ritmi freschi e dinamici, perfetti per scatenarsi e cantare a squarciagola.</p>
+                    <div class="col-md-1"></div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="container">
-            <div class="row my-5 gy-3 align-items-center">
-                <div class="col-md-4">
-                    <div class="pongo-box image-box" style="background-image: url('imgs/dieci.webp');">
-                        <span class="title">10</span>
-                        <span class="subtitle">originals</span>
+        <section class="section" data-bg="shark">
+            <div class="section-background-wrapper">
+                <div class="section-background" style="background-color: var(--brand-azzurro)">
+                    <div class="section-background-content img-deep-shadow"></div>
+                </div>
+            </div>
+            <div class="section-content container">
+                <div class="pongo-box box-crema glance-container">
+                    <div class="container">
+                        <!-- Prima riga: si prende il primo terzo di spazio da destra -->
+                        <div class="row">
+                          <div class="col-md-4 col-12">
+                            <img src="imgs/no-sharks.png" class="img-fluid img-shadow">
+                          </div>
+                          <div class="col-md-1"></div>
+                          <div class="col-md-6 col-12 text-start mt-5">
+                            <p class="display-3">Squaletti in ascolto, attenzione!</p>
+                          </div>
+                        </div>
+
+                        <!-- Terza riga: si prende l'ultimo terzo di spazio -->
+                        <div class="row">
+                            <div class="col-md-7"></div> <!-- 40% di spazio vuoto -->
+                            <div class="col-md-5 col-12 text-start mt-3">
+                              <p><b>Baby Shark si prende una pausa</b>… È il arrivato il momento di tuffarsi in nuove avventure, tutte da cantare.</p>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" data-bg="ciccio">
+            <div class="section-background-wrapper">
+                <div class="section-background" style="background-color: var(--brand-arancio)">
+                    <div class="section-background-content img-deep-shadow"></div>
+                </div>
+            </div>
+            <div class="section-content container d-flex flex-column">
+                  <div class="pongo-box box-miele">
+                    <p class="display-3 my-5">La Nostra Ricetta</p>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4 text-start">
+                                <h1>📖</h1>
+                                <p><b>Storia Coinvolgente.</b> Ogni canzone è un piccolo viaggio, pieno di sorprese e personaggi indimenticabili.</p>
+                            </div>
+                            <div class="col-md-4 text-start">
+                                <h1>🔍</h1>
+                                <p><b>Significato Nascosto.</b> Tra rime e melodia, si nascondono dettagli che solo i più attenti sapranno scoprire.</p>
+                            </div>
+                            <div class="col-md-4 text-start">
+                                <h1>💃</h1>
+                                <p><b>Musica Travolgente.</b> Ritmi freschi e dinamici, perfetti per scatenarsi e cantare a squarciagola.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="row my-5 gy-3 align-items-center">
+                            <div class="col-md-1"></div>
+
+                            <div class="col-md-4">
+                                <div class="pongo-box image-box" style="background-image: url('imgs/dieci.webp');">
+                                    <span class="title">10</span>
+                                    <span class="subtitle">originals</span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <p class="h4 text-start">Ecco a te 10 storie inedite, raccontate grazie al potere della musica, per <b>accendere l'attenzione</b> e <b>coltivare l'immaginazione</b>.</p>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" data-bg="ciccio">
+            <div class="section-background-wrapper">
+                <div class="section-background">
+                    <div class="section-background-content img-deep-shadow"></div>
+                </div>
+            </div>
+            <div class="section-content container">
+              <div class="" style="padding-left: 10rem;"></div>
+              <div class="pongo-box box-arancio">
+                <p class="display-3 my-5">Incontra i Personaggi</p>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 text-start">
+                            <div class="pongo-box image-box" style="background-image: url('imgs/ciccio-pasticcio.webp');"></div>
+                            <h1>Ciccio Pasticcio</h1>
+                            <p>Uno scoppiettante combinaguai con una fortuna sfacciata: ogni volta che inciampa, c’è sempre un amico pronto ad aiutarlo!</p>
+                        </div>
+                        <div class="col-md-4 text-start">
+                            <div class="pongo-box image-box" style="background-image: url('imgs/barby-mita.png');"></div>
+                            <h1>Barby Mita</h1>
+                            <p>Vuole diventare grande, ma si perde nei piccoli dettagli. Un giorno vuole conquistare il mondo, quello dopo sta ancora cercando le scarpe giuste!</p>
+                        </div>
+                        <div class="col-md-4 text-start">
+                            <div class="pongo-box image-box" style="background-image: url('imgs/re-regina.png');"></div>
+                            <h1>Re e Regina del Parco</h1>
+                            <p>Sfrecciano con i loro monopattini, ma mai senza casco! Veloci, eleganti e sempre pronti a nuove avventure tra le strade del parco!</p>
+                        </div>
                     </div>
                 </div>
+              </div>
+            </div>
+        </section>
 
-                <div class="col-md-4">
-                    <p class="text-start">Ecco a te 10 storie inedite, raccontate grazie al potere della musica, per <b>accendere l'attenzione</b> e <b>coltivare l'immaginazione</b>.</p>
+
+        <section class="section" data-bg="crepe">
+            <div class="section-background-wrapper">
+                <div class="section-background" style="background-color: var(--brand-miele)">
+                    <div class="section-background-content img-deep-shadow"></div>
                 </div>
             </div>
-        </div>
-      </div>
+            <div class="section-content container d-flex flex-column">
+              <div class="">
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col text-start">
+                        <p class="display-3 mt-5">Lo Sponsor</p>
+                        <p class="h3">(non ufficiale)</p>
+                    </div>
+                </div>
+                <!-- <p class="display-1 mb-5">La Crêpe Suzette</p> -->
+                <div class="container mt-5">
+                    <div class="row align-items-end">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-2 text-start">
+                            Perché non esiste un problema che una crêpe ben fatta non possa risolvere.
+                        </div>
+                        <div class="col-md-6">
+                            <img src="imgs/crepe.png" class="img-fluid img-shadow" style="">
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </section>
+
     </div>
 
-    <separator></separator>
-
-    <div id="personaggi" class="container">
-
-      <div class="pongo-box box-arancio">
-        <p class="display-3 my-5">Incontra i Personaggi</p>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 text-start">
-                    <div class="pongo-box image-box" style="background-image: url('imgs/ciccio-pasticcio.webp');"></div>
-                    <h1>Ciccio Pasticcio</h1>
-                    <p>Uno scoppiettante combinaguai con una fortuna sfacciata: ogni volta che inciampa, c’è sempre un amico pronto ad aiutarlo!</p>
-                </div>
-                <div class="col-md-4 text-start">
-                    <div class="pongo-box image-box" style="background-image: url('imgs/barby-mita.png');"></div>
-                    <h1>Barby Mita</h1>
-                    <p>Vuole diventare grande, ma si perde nei piccoli dettagli. Un giorno vuole conquistare il mondo, quello dopo sta ancora cercando le scarpe giuste!</p>
-                </div>
-                <div class="col-md-4 text-start">
-                    <div class="pongo-box image-box" style="background-image: url('imgs/re-regina.png');"></div>
-                    <h1>Re e Regina del Parco</h1>
-                    <p>Sfrecciano con i loro monopattini, ma mai senza casco! Veloci, eleganti e sempre pronti a nuove avventure tra le strade del parco!</p>
-                </div>
-            </div>
-        </div>
-      </div>
+    <div id="album" class="container d-flex flex-column gap-5 align-items-center">
     </div>
-
-    <separator></separator>
-
-    <div id="sponsor" class="container">
-
-      <div class="">
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col text-start">
-                <p class="display-3 mt-5">Lo Sponsor</p>
-                <p class="h3">(non ufficiale)</p>
-            </div>
-        </div>
-        <!-- <p class="display-1 mb-5">La Crêpe Suzette</p> -->
-        <div class="container mt-5">
-            <div class="row align-items-end">
-                <div class="col-md-2"></div>
-                <div class="col-md-2 text-start">
-                    Perché non esiste un problema che una crêpe ben fatta non possa risolvere.
-                </div>
-                <div class="col-md-6">
-                    <img src="imgs/crepe.png" class="img-fluid img-shadow" style="">
-                </div>
-            </div>
-        </div>
-      </div>
-    </div>
-
-    <separator></separator>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
