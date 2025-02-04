@@ -424,6 +424,18 @@ separator {
     padding-top: 10rem; padding-bottom: 10rem;
 }
 
+.personaggi-section-header {
+    background-image: url('imgs/ciccio-left.png'); /* Imposta l'immagine come sfondo */
+    background-size: contain; /* Mantiene le proporzioni senza ritagliare */
+    background-position: left 2rem center; /* Ancora l'immagine a sinistra */
+    background-repeat: no-repeat;
+    
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content-between: space-between; /* Spinge il testo a destra */
+    min-height: 200px;
+}
+
 .arancio { color: var(--brand-arancio); }
 .mela { color: var(--brand-mela); }
 .crema { color: var(--brand-crema); }
