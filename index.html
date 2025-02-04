@@ -56,39 +56,6 @@
     background-position: right bottom;
 }
 
-/* Contenitore degli elementi del carosello */
-.carousel-content {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Immagini quadrate */
-.carousel-img {
-    object-fit: cover;
-    border-radius: 10px; /* Angoli leggermente arrotondati */
-    margin-bottom: 15px; /* 🔥 Distanza tra immagine e testo */
-}
-
-.carousel-text {
-    font-size: 1.1rem;
-    color: #333;
-    font-weight: bold;
-    text-align: center;
-    max-width: 80%;
-    margin-top: 10px; /* 🔥 Assicura spazio tra immagine e testo */
-}
-
-/* Cambia il colore dell'icona delle frecce con --primary-color */
-.custom-arrow .carousel-control-prev-icon,
-.custom-arrow .carousel-control-next-icon {
-    color: var(--primary-color);
-    background-color: var(--primary-color);
-    border-radius: 50%;
-    padding: 20px;
-}
-
 
     </style>
 
@@ -132,12 +99,12 @@
             <div class="section-content container">
                 <div class="row align-items-center">
                     <div class="col-md-1"></div>
-                    <div class="col-md-3">
+                    <div class="col-lg-3">
                       <p class="h3">Ti presentiamo</p>
                       <p class="display-1">Il Baby Album</p>
                     </div>
 
-                    <div class="col-md-7 custom-container pongo-box box-arancio">
+                    <div class="col-md-6 custom-container pongo-box box-arancio">
                         <div class="hero-background">
                             <!-- Immagine floating in basso a sinistra -->
                             <img src="imgs/hero-left.png" alt="Hero Left" class="hero-left">
@@ -171,27 +138,17 @@
                 </div>
             </div>
             <div class="section-content container">
-                <div class="pongo-box box-crema glance-container">
-                    <div class="container">
-                        <!-- Prima riga: si prende il primo terzo di spazio da destra -->
-                        <div class="row">
-                          <div class="col-md-4 col-12">
-                            <img src="imgs/no-sharks.png" class="img-fluid img-shadow">
-                          </div>
-                          <div class="col-md-1"></div>
-                          <div class="col-md-6 col-12 text-start mt-5">
-                            <p class="display-3">Squaletti in ascolto, attenzione!</p>
-                          </div>
-                        </div>
-
-                        <!-- Terza riga: si prende l'ultimo terzo di spazio -->
-                        <div class="row">
-                            <div class="col-md-7"></div> <!-- 40% di spazio vuoto -->
-                            <div class="col-md-5 col-12 text-start mt-3">
-                              <p><b>Baby Shark si prende una pausa</b>… È il arrivato il momento di tuffarsi in nuove avventure, tutte da cantare.</p>
-                            </div>
-                        </div>
+                <div class="pongo-box box-crema glance-container p-5">
+                    <div class="row align-items-center">
+                      <div class="col-md-4 col-12">
+                        <img src="imgs/no-sharks.png" class="img-fluid img-shadow">
                       </div>
+                      <div class="col-md-1"></div>
+                      <div class="col-md-6 col-12 text-start mt-5">
+                        <p class="display-3">Squaletti in ascolto, attenzione!</p>
+                        <p class="mt-3"><b>Baby Shark si prende una pausa</b>… È il arrivato il momento di tuffarsi in nuove avventure, tutte da cantare.</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
             </div>
@@ -199,7 +156,7 @@
 
         <section class="section">
             <div class="section-background-wrapper">
-                <div class="section-background" style="background-color: var(--brand-notte-morbido)">
+                <div class="section-background box-notte">
                     <div class="section-background-content img-deep-shadow"></div>
                 </div>
             </div>
@@ -222,13 +179,14 @@
                             </div>
                         </div>
                     </div>
+                  </div>
 
-                    <div class="container">
+                  <div class="container box-notte">
                         <div class="row my-5 gy-3 align-items-center">
                             <div class="col-md-1"></div>
 
                             <div class="col-md-4">
-                                <div class="pongo-box image-box" style="background-image: url('imgs/dieci.webp'); border-radius: 1rem;">
+                                <div class="pongo-box image-box" style="background-image: url('imgs/dieci.webp'); border-radius: var(--border-radius);">
                                     <span class="title">10</span>
                                     <span class="subtitle">originals</span>
                                 </div>
@@ -239,22 +197,21 @@
                             </div>
                         </div>
                     </div>
-                  </div>
                 </div>
             </div>
         </section>
 
-        <section class="section">
+        <section id="personaggi" class="section">
             <div class="section-background-wrapper">
                 <div class="section-background">
                     <div class="section-background-content img-deep-shadow"></div>
                 </div>
             </div>
-            <div class="section-content container d-flex flex-column align-items-start">
+            <div class="section-content container d-flex flex-column">
               
               <div class="row personaggi-section-header">
                 <div class="col-6"></div>
-                <p class="col-6 display-3 text-end">Personaggi di tutto rispetto</p>
+                <p class="col display-3 text-end">Personaggi di tutto rispetto</p>
               </div>
               <div class="pongo-box box-arancio">
                 <div class="container">
@@ -287,7 +244,7 @@
                     <div class="section-background-content img-deep-shadow"></div>
                 </div>
             </div>
-            <div class="section-content container d-flex flex-column">
+            <div class="section-content container d-flex flex-column" style="color: var(--brand-polvere);">
               <div class="">
                 <div class="row">
                     <div class="col-md-2"></div>
@@ -300,8 +257,8 @@
                 <div class="container mt-5">
                     <div class="row align-items-end">
                         <div class="col-md-2"></div>
-                        <div class="col-5 col-md-2 text-start">
-                            Perché non esiste un problema che una crêpe ben fatta non possa risolvere.
+                        <div class="col-5 col-md-2 text-start subheadline">
+                            <p>Perché non esiste un problema che una crêpe ben fatta non possa risolvere.</p>
                         </div>
                         <div class="col-md-6">
                             <img src="imgs/crepe.png" class="img-fluid img-shadow" style="">
@@ -322,9 +279,10 @@
             <div class="section-content container d-flex flex-column align-items-start">
               
               <div class="row">
-                <p class="col-6 display-3 text-start">Chi canta e chi suona?</p>
-                <div class="col-md-5 text-start mt-3">
-                  <p><b>Due papà con la voglia di far ballare grandi e piccoli… ma non siamo soli! <b>Ospiti speciali</b> e personaggi segreti si nascondono tra le tracce.</p>
+                <p class="col-md-6 display-3 text-start">Chi canta e chi suona?</p>
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-start subheadline mt-3">
+                  <p>Due papà con la voglia di far ballare grandi e piccoli… ma non siamo soli! <b>Ospiti speciali</b> e personaggi segreti si nascondono tra le tracce.</p>
                 </div>
               </div>
               <div class="pongo-box box-crema">
@@ -338,6 +296,7 @@
                                 Dopo un percorso alla <a href="https://instagram.com/nebilmattia" target="_blank">Blank Music School</a>, ha combinato il codice con le note, 
                                 lanciando <a href="https://depop.com" target="_blank">startup</a> di successo e nuove avventure sonore.</p>
                         </div>
+                        <div class="col-md-1"></div>
                         <div class="col-md-4 text-start">
                             <div class="d-flex justify-content-center">
                                 <img src="imgs/misterfil.jpg" class="img-fluid rounded-circle img-shadow p-3 w-100" style="max-width: 200px;">
@@ -359,10 +318,10 @@
                 </div>
             </div>
             <div class="section-content container d-flex flex-column align-items-start">
-                <div class="row" style="color: var(--brand-azzurro);">
-                    <p class="col-6 display-3 text-start">E dopo l'album?</p>
-                    <p class="col-6">
-                    <div class="col-md-5 text-start mt-3">
+                  <div class="row" style="color: var(--brand-azzurro);">
+                    <p class="col-md-6 display-3 text-start">E dopo l'album?</p>
+                    <div class="col-md-6"></div>
+                    <div class="col-md-6 text-start subheadline">
                       <p>Non ci fermiamo qui. Questo è solo l’inizio di un viaggio musicale… e abbiamo già in mente il prossimo passo!</p>
                     </div>
                   </div>
