@@ -451,6 +451,39 @@ separator {
     min-height: 200px;
 }
 
+/* Contenitore degli elementi del carosello */
+.carousel-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Immagini quadrate */
+.carousel-img {
+    object-fit: cover;
+    border-radius: 10px; /* Angoli leggermente arrotondati */
+    margin-bottom: 15px; /* 🔥 Distanza tra immagine e testo */
+}
+
+.carousel-text {
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    max-width: 80%;
+    margin-top: 10px; /* 🔥 Assicura spazio tra immagine e testo */
+}
+
+/* Cambia il colore dell'icona delle frecce con --primary-color */
+.custom-arrow .carousel-control-prev-icon,
+.custom-arrow .carousel-control-next-icon {
+    color: var(--primary-color);
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    padding: 20px;
+}
+
 .arancio { color: var(--brand-arancio); }
 .mela { color: var(--brand-mela); }
 .crema { color: var(--brand-crema); }

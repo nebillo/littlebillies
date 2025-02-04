@@ -56,6 +56,40 @@
     background-position: right bottom;
 }
 
+/* Contenitore degli elementi del carosello */
+.carousel-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Immagini quadrate */
+.carousel-img {
+    object-fit: cover;
+    border-radius: 10px; /* Angoli leggermente arrotondati */
+    margin-bottom: 15px; /* 🔥 Distanza tra immagine e testo */
+}
+
+.carousel-text {
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    max-width: 80%;
+    margin-top: 10px; /* 🔥 Assicura spazio tra immagine e testo */
+}
+
+/* Cambia il colore dell'icona delle frecce con --primary-color */
+.custom-arrow .carousel-control-prev-icon,
+.custom-arrow .carousel-control-next-icon {
+    color: var(--primary-color);
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    padding: 20px;
+}
+
+
     </style>
 
   </head>
@@ -316,6 +350,80 @@
                     </div>
                 </div>
               </div>
+        </section>
+
+        <section id="future" class="section">
+            <div class="section-background-wrapper">
+                <div class="section-background" style="background-color: var(--brand-notte-morbido);">
+                    <div class="section-background-content img-deep-shadow"></div>
+                </div>
+            </div>
+            <div class="section-content container d-flex flex-column align-items-start">
+                <div class="row" style="color: var(--brand-azzurro);">
+                    <p class="col-6 display-3 text-start">E dopo l'album?</p>
+                    <p class="col-6">
+                    <div class="col-md-5 text-start mt-3">
+                      <p>Non ci fermiamo qui. Questo è solo l’inizio di un viaggio musicale… e abbiamo già in mente il prossimo passo!</p>
+                    </div>
+                  </div>
+                  <div class="pongo-box box-crema">
+                    <!-- Carosello Bootstrap -->
+                    <div id="customCarousel" class="carousel slide col-md-6 col-lg-4 m-auto" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <!-- Elemento 1 -->
+                            <div class="carousel-item active">
+                                <div class="carousel-content">
+                                    <img src="imgs/karaoke.webp" class="carousel-img img-fluid" alt="Karaoke App">
+                                    <p class="carousel-text">Un'app karaoke per iPhone, perfetta per tutta la famiglia.</p>
+                                </div>
+                            </div>
+                            <!-- Elemento 2 -->
+                            <div class="carousel-item">
+                                <div class="carousel-content">
+                                    <img src="imgs/libro.webp" class="carousel-img img-fluid" alt="Libri musicali">
+                                    <p class="carousel-text">Libri musicali personalizzati per bambini con canzoni dedicate.</p>
+                                </div>
+                            </div>
+                            <!-- Elemento 3 -->
+                            <div class="carousel-item">
+                                <div class="carousel-content">
+                                    <img src="imgs/video.webp" class="carousel-img img-fluid" alt="Video educativi">
+                                    <p class="carousel-text">Video e altri contenuti musicali per divertirsi imparando.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frecce di navigazione personalizzate -->
+                        <button class="carousel-control-prev custom-arrow" type="button" data-bs-target="#customCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Precedente</span>
+                        </button>
+                        <button class="carousel-control-next custom-arrow" type="button" data-bs-target="#customCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Successivo</span>
+                        </button>
+                    </div>
+
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4 text-start">
+                                <h1>🎶</h1>
+                                <p>Abbiamo già idee pronte per nuove tracce. Quale sarà la prossima avventura musicale?</p>
+                            </div>
+                            <div class="col-md-4 text-start">
+                                <h1>🎤</h1>
+                                <p>Ci piacerebbe portare la nostra musica dal vivo… magari con qualche sorpresa!</p>
+                            </div>
+                            <div class="col-md-4 text-start">
+                                <h1>📩</h1>
+                                <p>Chi si iscrive alla newsletter avrà accesso a demo, retroscena e chicche in anteprima!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                  </div>
+                </div>
+            </div>
         </section>
 
     </div>
