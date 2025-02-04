@@ -1,6 +1,8 @@
 :root {
   --primary-bg: rgb(175, 184, 174);
   --primary-color: #3a3a3a;
+  --link-color: #ff5722; /* Colore predefinito */
+  --secondary-color: #ff9800; /* Colore su hover, focus e visitato */
   --brand-arancio: #FF8C42;
   --brand-mela: #A4DE02;
   --brand-crema: #FFF5E1;
@@ -20,6 +22,19 @@
 body {
     font-family: var(--font-primary);
     color: var(--primary-color);
+}
+
+a {
+    color: var(--link-color); /* Colore iniziale */
+    text-decoration: none;
+/*    transition: color 0.3s ease-in-out; /* Effetto fluido */*/
+}
+
+a:hover,
+a:focus,
+a:visited {
+    color: var(--secondary-color); /* Cambia colore quando hoverato, visitato o focused */
+    text-decoration: underline;
 }
 
 .body-background {
@@ -425,7 +440,7 @@ separator {
 }
 
 .personaggi-section-header {
-    background-image: url('imgs/ciccio-left.png'); /* Imposta l'immagine come sfondo */
+    background-image: url('../imgs/ciccio-left.png'); /* Imposta l'immagine come sfondo */
     background-size: contain; /* Mantiene le proporzioni senza ritagliare */
     background-position: left 2rem center; /* Ancora l'immagine a sinistra */
     background-repeat: no-repeat;
