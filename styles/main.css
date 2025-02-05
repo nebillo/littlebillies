@@ -493,6 +493,11 @@ separator {
     padding: 1.25rem 2.5rem;
 }
 
+.footer-box {
+    padding: 3rem;
+    font-size: 1.1rem;
+}
+
 .arancio { color: var(--brand-arancio); }
 .mela { color: var(--brand-mela); }
 .crema { color: var(--brand-crema); }
