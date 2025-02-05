@@ -17,16 +17,20 @@
 [data-bg="planet"] .section-background-content {
     background-image: 
         url('imgs/top-left.png'), 
-        url('imgs/top-right.png');
+        url('imgs/top-right.png'),
+        url('imgs/bottom-left.png'),
+        url('imgs/bottom-right.png');
 
-    background-position: left 0px top, right 0px top;
+    background-position: left 0px top, right 0px top, left 10px bottom, right 0px bottom;
 }
 
 [data-bg="planet-bottom"] .section-background-content {
     background-image:
-        url('imgs/top-right.png');
+        url('imgs/top-right.png'),
+        url('imgs/bottom-left.png'),
+        url('imgs/bottom-right.png');
 
-    background-position: right 0px top;
+    background-position: right 0px top, left 10px bottom, right 0px bottom;
 }
 
 [data-bg="shark"] .section-background-content {
@@ -450,16 +454,18 @@
     <footer class="container-fluid footer-box box-crema">
         <div class="container">
             <div class="row justify-content-center align-items-center g-3">
-                <div class="col-4">
+                <div class="col-lg-2"></div>
+                <div class="col-4 col-lg-2">
                     <div class="d-flex justify-content-center">
                         <a href="https://instagram.com/littlebilliesofficial" target="_blank"><img src="imgs/insta.png" class="img-fluid rounded-circle img-deep-shadow p-3 w-100" style="max-width: 150px;"></a>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-4 col-lg-2">
                     <div class="d-flex justify-content-center">
                         <a href="mailto:info@littlebillies.com"><img src="imgs/mail.png" class="img-fluid rounded-circle img-deep-shadow p-3 w-100" style="max-width: 150px;"></a>
                     </div>
                 </div>
+                <div class="col-lg-2"></div>
                 <div class="col text-center small">
                     <p>
                         Nebil Kriedi e Filippo Ghezzo si identificano come autori e 
