@@ -22,6 +22,13 @@
     background-position: left 0px top, right 0px top;
 }
 
+[data-bg="planet-bottom"] .section-background-content {
+    background-image:
+        url('imgs/top-right.png');
+
+    background-position: right 0px top;
+}
+
 [data-bg="shark"] .section-background-content {
     background-image: 
         url('imgs/shark-top-left.png'), 
@@ -55,7 +62,6 @@
         url('imgs/crepe-right.png');
     background-position: right bottom;
 }
-
 
     </style>
 
@@ -311,7 +317,6 @@
                     </div>
               </div>
           </div>
-              
         </section>
 
         <section id="future" class="section">
@@ -386,6 +391,57 @@
                   </div>
                 </div>
             </div>
+        </section>
+
+        <section id="newsletter" class="section"  data-bg="planet-bottom">
+            <div class="section-background-wrapper">
+                <div class="section-background">
+                    <div class="section-background-content img-deep-shadow"></div>
+                </div>
+            </div>
+            <div class="section-content container align-items-start">
+              
+              <div class="row g-5">
+                <div class="col-12 col-xl-6">
+                    <div class="col-md-6 col-xl-9 text-start">
+                        <p class="display-3">Il club segreto dei piccoli ascoltatori</p>
+                        <p class="subheadline mt-3">Iscriviti e ricevi subito il link per ascoltare l’album in anteprima! <b>Solo per chi è dentro al club.</b></p>
+                        <form class="newsletter">
+                            <div class="mt-3">
+                                <input class="pongo-box box-crema w-100" type="text" id="firstname" name="firstname" placeholder="Nome (opzionale)" aria-label="Nome">
+                            </div>
+                            <div class="mt-3">
+                                <input class="pongo-box box-crema w-100" type="email" id="email" name="email" placeholder="La tua email" aria-label="Email" required>
+                            </div>
+                            <div class="mt-3">
+                                <button class="button-3d box-arancio w-100" type="submit" onclick="event.preventDefault()">Iscriviti</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-12 col-xl-5 pongo-box box-miele">
+                    <div class="container">
+                        <div class="row justify-content-center g-3">
+                            <p class="h3 mb-3">Perche iscriversi?</p>
+                        </div>
+                        <div class="row justify-content-center g-3">
+                            <div class="col-md-4 col-xl-12 text-start">
+                                <h1>📥</h1>
+                                <p><b>Ottieni il link diretto allo Streaming</b>: Iscriviti e ascolta l’album in anteprima, prima di tutti, senza costi di abbonamento!</p>
+                            </div>
+                            <div class="col-md-4 col-xl-12 text-start">
+                                <h1>✨</h1>
+                                <p><b>Contenuti esclusivi</b>: Ricevi curiosità, retroscena e chicche riservate ai membri del club.</p>
+                            </div>
+                            <div class="col-md-4 col-xl-12 text-start">
+                                <h1>🎧</h1>
+                                <p><b>Influenza l’album</b>: Il tuo Feedback ci aiuterà a modellare il progetto fino alla release pubblica.</p>
+                            </div>
+                        </div>
+                    </div>
+              </div>
+          </div>
         </section>
 
     </div>

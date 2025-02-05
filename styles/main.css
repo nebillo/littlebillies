@@ -95,7 +95,7 @@ h2 {
 /* 📌 Bottone interattivo con effetto materico */
 .button-3d {
     display: inline-block;
-    padding: 20px 40px;
+    padding: 1.25rem 2.5rem;
     border-radius: 30px;
     box-shadow: 15px 15px 25px var(--shadow-color);
     font-size: 1.2rem;
@@ -147,7 +147,7 @@ h2 {
 /* 📌 Box Pongo - Statico, effetto liquido */
 .pongo-box {
 /*    display: inline-block;*/
-    padding: 20px 50px;
+    padding: 3rem;
     border-radius: var(--border-radius);
     box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.4);
     font-size: 18px;
@@ -487,6 +487,10 @@ separator {
     background-color: var(--primary-color);
     border-radius: 50%;
     padding: 20px;
+}
+
+.newsletter input {
+    padding: 1.25rem 2.5rem;
 }
 
 .arancio { color: var(--brand-arancio); }
