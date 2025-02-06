@@ -27,7 +27,7 @@
     --font-main: "Comic Sans MS", "Comic Sans", cursive;
     --font-title: 'Luckiest Guy', cursive;
     --font-size-btn: 1rem;
-    --font-size-box: 1.5rem;
+    --font-size-box: 1.2rem;
 
     /* Bordo e ombre */
     --border-thick: 0.25rem solid var(--primary-border);
@@ -63,8 +63,8 @@ h2 {
 
 /* ✅ Box Generali */
 .box, .box-alt, .box-green, .box-pink {
-    padding: 1rem;
-    padding-bottom: 8px;
+    padding: 0.7rem;
+    padding-bottom: 0.25rem;
     margin: 1.25rem auto;
     font-family: var(--font-title);
     font-size: var(--font-size-box);
@@ -85,7 +85,7 @@ h2 {
     background-color: var(--secondary-blue);
     border: var(--border-thick);
     border-radius: 3px;
-    box-shadow: 8px 8px 0px var(--primary-red);
+    box-shadow: 8px 8px 0px var(--primary-pink);
     transform: rotate(2deg);
 }
 
@@ -98,9 +98,12 @@ h2 {
 
 .box-pink {
     background-color: var(--primary-pink);
-    border-radius: 3.125rem 0.625rem;
+    border-radius: 2.6rem 0.625rem;
     box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.1);
     color: var(--text-color);
+    padding-right: 1.5rem;
+    position: relative;
+    left: 0.5rem;
 }
 
 /* ✅ Bottoni */
@@ -192,6 +195,16 @@ h2 {
     flex-direction: column;
 }
 
+.container p {
+    max-width: 50vw;
+    margin: auto;
+}
+
+small {
+    max-width: 50vw;
+    margin: auto;
+}
+
 .carousel {
     padding-top: 2rem;
     border-radius: var(--box-radius);
@@ -204,7 +217,8 @@ h2 {
 }
 
 .carousel-img {
-    max-width: 400px; /* Regola l'altezza massima delle immagini */
+    max-height: 300px; /* Regola l'altezza massima delle immagini */
+    max-width: 50vw;
     margin-left: auto;
     margin-right: auto;
     background-color: var(--primary-bg);
@@ -216,18 +230,23 @@ h2 {
     padding-bottom: 1rem;
     padding-left: 3rem;
     padding-right: 3rem;
-    max-width: 500px;
+}
+
+.caption small {
+    max-width: 300px;
+    display: inline-block;
 }
 
 .carousel-item .square-image {
     display: inline-block;
     font-family: var(--font-title);
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--primary-red);
     background-color: var(--primary-bg);
     padding-top: 0.9rem;
     padding-left: 1rem;
     padding-right: 1rem;
+    padding-bottom: 0.4rem;
     margin-bottom: 2rem;
 }
 
@@ -235,6 +254,7 @@ h2 {
     text-indent: -9999px; /* Nasconde i numeri fuori dallo schermo */
     overflow: hidden;
 }
+
     </style>
 </head>
 <body>
@@ -260,23 +280,23 @@ h2 {
     <!-- Hero Section -->
     <section id="home" class="section">
         <div class="container mt-5">
-            <div class="row align-items-center g-5">
+            <div class="row align-items-center g-1">
                 <div class="col-lg-6">
-                    <div class="box" style="position: relative; top: 50px;">
+                    <div class="box">
                         Anteprima
                     </div>
-                    <div class="box-alt d-flex p-0" style="max-width: 400px;">
+                    <div class="box-alt d-flex p-0" style="max-width: 300px; position: relative; top: -40px;">
                         <img src="imgs/vinile.png" alt="Il Baby Album" class="img-fluid">
                     </div>
                 </div>
 
-                <div class="col-lg-6">
+                <div class="col-lg-5">
                     <div class="hero-text">
                         <p>Stiamo per lanciare <em>Il Baby Album</em> 🚀, ma prima vogliamo che lo ascolti chi conta davvero: <strong>tu.</strong></p>
                         <p>Questa è una <strong>preview riservata</strong>, un invito esclusivo per scoprire in anteprima le nostre <strong>10 tracce inedite</strong>.</p>
                     </div>
-                    <div class="">
-                        <button class="btn btn-primary">🎵 Ascolta Ora</button>
+                    <div class="mt-3">
+                        <button class="btn btn-primary mx-2">🎵 Ascolta Ora</button>
                         <button class="btn btn-secondary">📖 Leggi la Storia</button>
                     </div>
                 </div>
@@ -286,27 +306,34 @@ h2 {
     
     <section id="about" class="mb-5">
         <div class="container">
-            <div class="row align-items-center g-5">
+            <div class="row align-items-center g-3">
                 <div class="col-lg-1"></div>
                 <div class="col-lg-4">
-                    <img src="imgs/squalo.png" alt="Squaletto" class="img-fluid rounded-avatar mb-5" style="max-width: 200px; background-color: var(--primary-bg);">
+                    <img src="imgs/squalo.png" alt="Squaletto" class="img-fluid rounded-avatar mb-5" style="max-width: 200px; background-color: var(--secondary-blue);">
                     <h2>Squaletti in ascolto, attenzione!</h2>
                     <p><b>Baby Shark si prende una pausa</b>… È il arrivato il momento di tuffarsi in nuove avventure, tutte da cantare.</p>
                 </div>
-                <div class="col-lg-2"></div>
+                <div class="col-lg-1"></div>
 
-                <div class="col-lg-4 box-alt" style="background: var(--primary-blue);">
-                    <p>Ecco perchè siamo unici.</p>
-                    <button class="btn btn-secondary m-auto" style="min-width: 250px">Il nostro stile</button>
+                <div class="col-lg-4">
+                    <div class="box m-4">
+                        <div class="box-alt m-4" style="background: var(--primary-blue);">
+                            <p>Ecco perchè siamo unici.</p>
+                            <button class="btn btn-primary m-auto mb-3">Scoprilo</button>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="col-lg-1"></div>
             </div>
     </section>
     
     <section id="music" class="section">
         <div class="container">
+            <h1 class="my-5">La Nostra Ricetta</h1>
             <p class="mb-5">Ecco come sono nate 10 storie inedite, raccontate grazie al potere della musica, per <b>accendere l'attenzione</b> e <b>coltivare l'immaginazione</b>.</p>
 
-            <div class="row align-items-start justify-content-center g-5">
+            <div class="row align-items-center justify-content-center g-5">
                 <div class="col-md-6 col-lg-4 d-flex flex-column">
                     <div class="box">
                         <h1>📖</h1>
@@ -332,8 +359,8 @@ h2 {
                 </div>
 
                 <div class="col-md-6 col-lg-4 d-flex flex-column">
-                    <img src="imgs/scooter2.png" alt="Monopattino" class="img-fluid square-image m-auto" style="max-width: 300px; background: var(--primary-blue);">
-                    <button class="btn btn-secondary m-auto" style="min-width: 250px;">💪 Scopri i personaggi!</button>
+                    <img src="imgs/scooter2.png" alt="Monopattino" class="img-fluid rounded-avatar m-auto" style="max-width: 200px; background: var(--primary-blue);">
+                    <button class="btn btn-secondary m-auto" style="z-index: 2; position: relative; top: -5px">💪 Scopri i personaggi!</button>
                 </div>
             </div>
 
@@ -341,7 +368,7 @@ h2 {
     
     <section id="contact" class="section" style="background: var(--primary-pink);">
         <div class="container">
-            <h1 class="my-4">Di Chi Parliamo</h1>
+            <h1 class="my-5">Di Chi Parliamo</h1>
 
             <div id="personaggiIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
               
