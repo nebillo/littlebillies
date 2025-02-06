@@ -23,10 +23,11 @@
     --secondary-blue: #D4E4FF; /* Azzurro Pastello */
 
     /* Font */
-    --font-main: 'Caveat', cursive;
+/*    --font-main: 'Caveat', cursive;*/
+    --font-main: "Comic Sans MS", "Comic Sans", cursive;
     --font-title: 'Luckiest Guy', cursive;
-    --font-size-btn: 1.125rem;
-    --font-size-box: 2.25rem;
+    --font-size-btn: 1rem;
+    --font-size-box: 1.5rem;
 
     /* Bordo e ombre */
     --border-thick: 0.25rem solid var(--primary-border);
@@ -40,7 +41,7 @@ body {
     background: var(--primary-bg);
     color: var(--text-color);
     font-family: var(--font-main);
-    font-size: 2rem;
+/*    font-size: 2rem;*/
     text-align: center;
     margin: 0;
     overflow-x: hidden;
@@ -49,25 +50,26 @@ body {
 /* ✅ Titoli */
 h1 {
     font-family: var(--font-title);
-    font-size: 3rem;
+/*    font-size: 3rem;*/
     color: var(--primary-blue);
     text-shadow: 0.2rem 0.2rem 0 var(--primary-shadow);
 }
 
 h2 {
     font-family: var(--font-title);
-    font-size: 2.5rem;
+/*    font-size: 2.5rem;*/
     color: var(--primary-red);
 }
 
 /* ✅ Box Generali */
 .box, .box-alt, .box-green, .box-pink {
-    padding: 2rem;
-    max-width: 31.25rem;
+    padding: 1rem;
+    padding-bottom: 8px;
     margin: 1.25rem auto;
-    font-weight: bold;
+    font-family: var(--font-title);
     font-size: var(--font-size-box);
     text-transform: uppercase;
+    display: inline-block;
 }
 
 /* ✅ Box Specifici */
@@ -105,7 +107,10 @@ h2 {
 .btn {
     font-family: var(--font-title);
     font-size: var(--font-size-btn);
-    padding: 0.625rem 1.25rem;
+    padding-top: 0.625rem;
+    padding-bottom: 0.125rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
     border: none;
     border-radius: var(--border-radius);
     cursor: pointer;
@@ -161,14 +166,19 @@ h2 {
 /* ✅ Navigazione */
 .nav-item {
     color: var(--text-color);
+    font-family: var(--font-title);
     font-size: var(--font-size-btn);
-    font-weight: bold;
     height: 2.5rem;
     border: none;
     border-radius: var(--border-radius);
     cursor: pointer;
     text-transform: uppercase;
     box-shadow: var(--shadow-standard);
+}
+
+.nav-item a {
+    position: relative; 
+    top: 6px;
 }
 
 /* ✅ Sezioni */
@@ -193,7 +203,6 @@ h2 {
     padding-bottom: 2rem;
 }
 
-/* Limita l'altezza dell'immagine */
 .carousel-img {
     max-width: 400px; /* Regola l'altezza massima delle immagini */
     margin-left: auto;
@@ -253,10 +262,10 @@ h2 {
         <div class="container mt-5">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6">
-                    <div class="box d-inline-block" style="margin-bottom: -50px;">
+                    <div class="box" style="position: relative; top: 50px;">
                         Anteprima
                     </div>
-                    <div class="box-alt p-0" style="max-width: 400px;">
+                    <div class="box-alt d-flex p-0" style="max-width: 400px;">
                         <img src="imgs/vinile.png" alt="Il Baby Album" class="img-fluid">
                     </div>
                 </div>
@@ -293,13 +302,13 @@ h2 {
             </div>
     </section>
     
-    <section id="music" class="section" style="background: var(--primary-blue);">
+    <section id="music" class="section">
         <div class="container">
             <p class="mb-5">Ecco come sono nate 10 storie inedite, raccontate grazie al potere della musica, per <b>accendere l'attenzione</b> e <b>coltivare l'immaginazione</b>.</p>
 
             <div class="row align-items-start justify-content-center g-5">
                 <div class="col-md-6 col-lg-4 d-flex flex-column">
-                    <div class="box d-inline-block">
+                    <div class="box">
                         <h1>📖</h1>
                         <p>Storia Coinvolgente</p>
                     </div>
@@ -307,7 +316,7 @@ h2 {
                 </div>
 
                 <div class="col-md-6 col-lg-4 d-flex flex-column">
-                    <div class="box-alt d-inline-block">
+                    <div class="box-alt">
                         <h1>🔍</h1>
                         <p>Significato Nascosto</p>
                     </div>
@@ -315,15 +324,15 @@ h2 {
                 </div>
 
                 <div class="col-md-6 col-lg-4 d-flex flex-column">
-                    <div class="box-pink d-inline-block">
+                    <div class="box-pink">
                         <h1>💃</h1>
-                        <p>Musica Travolgente.</p>
+                        <p>Musica Travolgente</p>
                     </div>
                     <small>Ritmi freschi e dinamici, perfetti per scatenarsi e cantare a squarciagola.</small>
                 </div>
 
                 <div class="col-md-6 col-lg-4 d-flex flex-column">
-                    <img src="imgs/scooter2.png" alt="Monopattino" class="img-fluid square-image m-auto" style="max-width: 300px;">
+                    <img src="imgs/scooter2.png" alt="Monopattino" class="img-fluid square-image m-auto" style="max-width: 300px; background: var(--primary-blue);">
                     <button class="btn btn-secondary m-auto" style="min-width: 250px;">💪 Scopri i personaggi!</button>
                 </div>
             </div>
