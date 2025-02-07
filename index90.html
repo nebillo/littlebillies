@@ -45,23 +45,20 @@ body {
     color: var(--text-color);
     font-family: var(--font-main);
     font-size: 18px;
-/*    font-size: 2rem;*/
     text-align: center;
     margin: 0;
     overflow-x: hidden;
 }
 
 /* ✅ Titoli */
-h1 {
+h1, .display-1 {
     font-family: var(--font-title);
-/*    font-size: 3rem;*/
     color: var(--primary-blue);
     text-shadow: 0.2rem 0.2rem 0 var(--primary-shadow);
 }
 
-h2 {
+h2, .display-2 {
     font-family: var(--font-title);
-/*    font-size: 2.5rem;*/
     color: var(--primary-red);
 }
 
@@ -288,24 +285,26 @@ h2 {
     <!-- Hero Section -->
     <section id="home" class="section">
         <div class="container mt-5">
-            <div class="row align-items-center g-1">
-                <div class="col-lg-6">
+            <h1 class="my-3">La Colonna Sonora<br>della Tua Infanzia <span class="small">(o quasi)</span></h1>
+            <div class="row align-items-center justify-content-center g-1">
+                <div class="col-10 col-md-7 col-lg-5">
                     <div class="box">
                         Anteprima
                     </div>
-                    <div class="box-alt d-flex p-0" style="max-width: 300px; position: relative; top: -40px;">
+                    <div class="box-alt d-flex p-0 m-3" style="position: relative; top: -40px;">
                         <img src="imgs/vinile.png" alt="Il Baby Album" class="img-fluid">
                     </div>
                 </div>
 
-                <div class="col-lg-5">
+                <div class="col-lg-1"></div>
+
+                <div class="col-md-8 col-lg-5 col-xl-4">
                     <div class="d-lg-none">
                         <a class="btn btn-primary mx-2" href="#preview">🎵 Ascolta Ora</a>
-                        <a class="btn btn-secondary" href="#storia">📖 Leggi la Storia</a>
+                        <a class="btn btn-secondary my-2" href="#storia">📖 Leggi la Storia</a>
                     </div>
                     <div class="mt-3 hero-text">
-                        <p>Stiamo per lanciare <em>Il Baby Album</em> 🚀, ma prima vogliamo che lo ascolti chi conta davvero: <strong>tu.</strong></p>
-                        <p>Questa è una <strong>preview riservata</strong>, un invito esclusivo per scoprire in anteprima le nostre <strong>10 tracce inedite</strong>.</p>
+                        <p>Prima del lancio, ti invitiamo ad ascoltare in anteprima le <strong>10 tracce inedite</strong> del <em>Baby Album</em> con questa <strong>preview riservata</strong>! 🚀🎶</p>
                     </div>
                     <div class="mt-3 d-none d-lg-block">
                         <a class="btn btn-primary mx-2" href="#preview">🎵 Ascolta Ora</a>
