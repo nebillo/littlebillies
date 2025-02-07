@@ -205,11 +205,15 @@ small {
     margin: auto;
 }
 
-.carousel {
-    padding-top: 2rem;
+.boxed {
     border-radius: var(--box-radius);
     border: var(--border-thick);
     box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.carousel {
+    padding-top: 2rem;
 }
 
 .carousel-item {
@@ -224,7 +228,7 @@ small {
     background-color: var(--primary-bg);
 }
 
-.carousel-item .caption {
+.carousel .caption {
     position: relative; 
     top: -45px;
     padding-bottom: 1rem;
@@ -237,7 +241,7 @@ small {
     display: inline-block;
 }
 
-.carousel-item .square-image {
+.carousel .square-image {
     display: inline-block;
     font-family: var(--font-title);
     font-size: 1.5rem;
@@ -269,8 +273,9 @@ small {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">Chi Siamo</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#music">Musica</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#musica">La Musica</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">Chi Siamo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#futuro">Next Steps</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contatti</a></li>
                 </ul>
             </div>
@@ -296,17 +301,17 @@ small {
                         <p>Questa è una <strong>preview riservata</strong>, un invito esclusivo per scoprire in anteprima le nostre <strong>10 tracce inedite</strong>.</p>
                     </div>
                     <div class="mt-3">
-                        <button class="btn btn-primary mx-2">🎵 Ascolta Ora</button>
-                        <button class="btn btn-secondary">📖 Leggi la Storia</button>
+                        <button class="btn btn-primary mx-2" href="#contatti">🎵 Ascolta Ora</button>
+                        <button class="btn btn-secondary" href="#storia">📖 Leggi la Storia</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <section id="about" class="mb-5">
+    <section id="storia" class="mb-5">
         <div class="container">
-            <div class="row align-items-center g-3">
+            <div class="boxed row align-items-center g-3 py-5">
                 <div class="col-lg-1"></div>
                 <div class="col-lg-4">
                     <img src="imgs/squalo.png" alt="Squaletto" class="img-fluid rounded-avatar mb-5" style="max-width: 200px; background-color: var(--secondary-blue);">
@@ -328,7 +333,7 @@ small {
             </div>
     </section>
     
-    <section id="music" class="section">
+    <section id="musica" class="section">
         <div class="container">
             <h1 class="my-5">La Nostra Ricetta</h1>
             <p class="mb-5">Ecco come sono nate 10 storie inedite, raccontate grazie al potere della musica, per <b>accendere l'attenzione</b> e <b>coltivare l'immaginazione</b>.</p>
@@ -366,11 +371,11 @@ small {
 
     </section>
     
-    <section id="contact" class="section" style="background: var(--primary-pink);">
+    <section id="personaggi" class="section" style="background: var(--primary-pink);">
         <div class="container">
             <h1 class="my-5">Di Chi Parliamo</h1>
 
-            <div id="personaggiIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+            <div id="personaggiIndicators" class="boxed carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
               
               <!-- Indicatori in alto -->
               <ol class="carousel-indicators">
@@ -410,6 +415,38 @@ small {
                   </div>
                 </div>
               </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="section" style="background: var(--primary-yellow);">
+        <div class="container">
+            <h1 class="my-5">Chi canta e chi suona?</h1>
+            <p class="mb-5">Due papà con la voglia di far ballare grandi e piccoli… ma non siamo soli! <b>Ospiti speciali</b> e <b>personaggi segreti</b> si nascondono tra le tracce.</p>
+
+            <div class="boxed carousel row">
+              
+              <div class="col-md-6">
+              <img class="d-block rounded-avatar carousel-img" src="imgs/nebillo.png" alt="nebillo" style="background-color: var(--primary-green);">
+              <div class="caption m-auto">
+                <div class="m-auto"><div class="square-image">Nebil</div></div>
+                <small>Sviluppatore software di giorno, musicista di notte (e a volte anche il contrario). 
+                                    Dopo un percorso alla <a href="https://instagram.com/nebilmattia" target="_blank">Blank Music School</a>, ha combinato il codice con le note, 
+                                    lanciando <a href="https://depop.com" target="_blank">startup</a> di successo e nuove avventure sonore.</small>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <img class="d-block rounded-avatar carousel-img" src="imgs/misterfil.png" alt="Mister Fil" style="background-color: var(--primary-green);">
+              <div class="caption m-auto">
+                <div class="m-auto"><div class="square-image">Filippo</div></div>
+                <small>Produttore con 20 anni di esperienza, sempre alla ricerca del suono perfetto. 
+                                    Ha dato vita ai progetti <a href="https://instagram.com/djmisterfil" target="_blank">Mister Fil</a> e <a href="https://instagram.com/venetiancustomgarage" target="_blank">Venetian Custom Garage</a>, 
+                                    mentre organizza eventi musicali che fanno tremare i pavimenti (e i vicini).</small>
+              </div>
+            </div>
+              
 
             </div>
         </div>
