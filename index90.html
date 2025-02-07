@@ -177,8 +177,15 @@ h2, .display-2 {
 
 /* ✅ Navbar */
 .navbar {
-    background: var(--primary-pink);
+    background-color: rgba(250, 243, 224, 0.9);
     padding: 0.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-standard);
+    margin-top: 1rem;
+}
+
+.navbar-nav {
+    gap: 0.5rem;
 }
 
 .navbar-brand img {
@@ -196,11 +203,21 @@ h2, .display-2 {
     cursor: pointer;
     text-transform: uppercase;
     box-shadow: var(--shadow-standard);
+    padding-left: 0.5rem;
 }
 
 .nav-item a {
     position: relative; 
     top: 6px;
+    color: var(--text-color) !important;
+}
+
+/* Cambia colore al bottone toggle */
+.navbar-toggler {
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+    border-color: var(--text-color) !important;
+    box-shadow: var(--shadow-standard);
 }
 
 /* ✅ Sezioni */
@@ -270,7 +287,7 @@ h2, .display-2 {
 <body>
     
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <nav class="container navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#"><img src="imgs/logo.png" alt="Little Billies Logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
