@@ -294,6 +294,23 @@ h2, .display-2 {
     overflow: hidden;
 }
 
+.faq-btn {
+    width: 100%;
+    text-align: left;
+    font-weight: bold;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-family: var(--font-title);
+    color: var(--text-color);
+    padding: 1rem;
+    padding-bottom: 0.7rem;
+}
+
+.faq-text {
+    padding-bottom: 1rem;
+}
+
     </style>
 </head>
 <body>
@@ -547,8 +564,68 @@ h2, .display-2 {
                     <div class="col-lg-1"></div>
 
                 </div>
+            </div>
+    </section>
 
-                
+    <section id="faq" class="section">
+        <div class="container">
+            <h2 class="text-center mb-3">❓ Domande Frequenti</h2>
+            
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 accordion" id="faqAccordion">
+                    <!-- FAQ 1 -->
+                    <div class="boxed mb-3">
+                        <button class="faq-btn" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            Per che età è adatto l’album?
+                        </button>
+                        <div id="faq1" class="collapse" data-bs-parent="#faqAccordion">
+                            <p class="faq-text">Il <em>Baby Album</em> è pensato per bambini dai <strong>1 ai 5 anni</strong>, con canzoni che stimolano la fantasia e il movimento. 🎶✨</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="boxed mb-3">
+                        <button class="faq-btn" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            Come posso contribuire al progetto?
+                        </button>
+                        <div id="faq2" class="collapse" data-bs-parent="#faqAccordion">
+                            <p class="faq-text">Ti invieremo <strong>sondaggi esclusivi</strong> per aiutare a scegliere dettagli come la copertina o i video musicali. Il tuo parere conta! 🎨📩</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="boxed mb-3">
+                        <button class="faq-btn" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            Posso ascoltarlo su Spotify?
+                        </button>
+                        <div id="faq3" class="collapse" data-bs-parent="#faqAccordion">
+                            <p class="faq-text">Non ancora! Per ora è disponibile <strong>solo su SoundCloud</strong>, perché stiamo perfezionando l’album grazie ai tuoi feedback. 🚀🎧</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="boxed mb-3">
+                        <button class="faq-btn" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            È gratuito?
+                        </button>
+                        <div id="faq4" class="collapse" data-bs-parent="#faqAccordion">
+                            <p class="faq-text">Sì, l’anteprima è <strong>completamente gratuita</strong>. Ti basta registrarti per ricevere il link di ascolto. 🆓🎵</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 5 -->
+                    <div class="boxed">
+                        <button class="faq-btn" data-bs-toggle="collapse" data-bs-target="#faq5">
+                            Posso condividerlo con altri genitori?
+                        </button>
+                        <div id="faq5" class="collapse" data-bs-parent="#faqAccordion">
+                            <p class="faq-text">Certo! Manda il link a questa pagina a chi potrebbe apprezzare un’alternativa musicale per i più piccoli. 🎁👶</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </section>
     
     <!-- Footer -->
