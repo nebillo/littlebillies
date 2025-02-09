@@ -1,482 +1,669 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palette Anni '90 Pop Kids</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-
-    <link href="styles/main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Caveat:wght@400;700&display=swap');
+        
+/* ✅ Variabili Globali */
+:root {
+    /* Colori */
+    --primary-bg: #FAF3E0; /* Bianco Crema */
+    --text-color: #2C2C2C; /* Grigio Grafite */
+    --primary-blue: #4A90E2; /* Blu Cielo Pop */
+    --primary-red: #E74C3C; /* Rosso Corallo */
+    --primary-yellow: #FFC857; /* Giallo Vintage */
+    --primary-green: #53D769; /* Verde Lime Soft */
+    --primary-pink: #FF6F91; /* Rosa Bubblegum */
+    --primary-shadow: #213555; /* Ombra Scura */
+    --primary-border: #2C2C2C; /* Bordo Standard */
+    --secondary-blue: #D4E4FF; /* Azzurro Pastello */
 
-/* Background personalizzato per ogni sezione */
-[data-bg="planet"] .section-background-content {
-    background-image: 
-        url('imgs/top-left.png'), 
-        url('imgs/top-right.png'),
-        url('imgs/bottom-left.png'),
-        url('imgs/bottom-right.png');
+    /* Font */
+    --font-main: 'Nunito', sans-serif;
+/*    --font-main: 'Caveat', cursive;*/
+/*    --font-main: "Comic Sans MS", "Comic Sans", cursive; <-- non c'e su mobile!!! */
+    --font-title: 'Luckiest Guy', cursive;
+    --font-size-btn: 1.1rem;
+    --font-size-box: 1.2rem;
 
-    background-position: left 0px top, right 0px top, left 10px bottom, right 0px bottom;
+    /* Bordo e ombre */
+    --border-thick: 0.25rem solid var(--primary-border);
+    --border-radius: 10px;
+    --box-radius: 1rem;
+    --shadow-standard: 4px 4px 0px var(--primary-shadow);
 }
 
-[data-bg="planet-bottom"] .section-background-content {
-    background-image:
-        url('imgs/top-right.png'),
-        url('imgs/bottom-left.png'),
-        url('imgs/bottom-right.png');
-
-    background-position: right 0px top, left 10px bottom, right 0px bottom;
+/* ✅ Stile Generale */
+body {
+    background: var(--primary-bg);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    font-size: 18px;
+    text-align: center;
+    margin: 0;
+    overflow-x: hidden;
 }
 
-[data-bg="shark"] .section-background-content {
-    background-image: 
-        url('imgs/shark-top-left.png'), 
-        url('imgs/shark-bottom-left.png'), 
-        url('imgs/shark-right.png');
-    background-position: left top, left 3rem bottom, right center;
+/* ✅ Titoli */
+h1, .display-1 {
+    font-family: var(--font-title);
+    color: var(--primary-blue);
+    text-shadow: 0.15rem 0.15rem 0 var(--primary-shadow);
 }
 
-[data-bg="ciccio"] .section-background-content {
-    background-image:
-        url('imgs/ciccio-left.png');
-    background-position: left 2rem bottom;
+h2, .display-2 {
+    font-family: var(--font-title);
+    color: var(--primary-red);
 }
 
-[data-bg="pins"] .section-background-content {
-    background-image:
-        url('imgs/ciccio-top-right.png'),
-        url('imgs/ciccio-bottom-right.png');
-    background-position: right top, right bottom;
+/* ✅ Box Generali */
+.box, .box-alt, .box-green, .box-pink, .box-tag {
+    padding: 0.7rem;
+    padding-bottom: 0.25rem;
+    margin: 1.25rem auto;
+    font-family: var(--font-title);
+    font-size: var(--font-size-box);
+    text-transform: uppercase;
+    display: inline-block;
 }
 
-[data-bg="crepe"] .section-background-content {
-    background-image: 
-        url('imgs/crepe-left.png'), 
-        url('imgs/crepe-right.png');
-    background-position: left top, right bottom;
+/* ✅ Box Specifici */
+.box {
+    background-color: var(--primary-yellow);
+    border: var(--border-thick);
+    border-radius: 3px;
+    box-shadow: 8px 8px 0px var(--primary-shadow); /* Ombra netta per effetto sticker */
+    transform: rotate(-2deg);
 }
 
-[data-bg="crepe-right"] .section-background-content {
-    background-image: 
-        url('imgs/crepe-right.png');
-    background-position: right bottom;
+.box-alt {
+    background-color: var(--secondary-blue);
+    border: var(--border-thick);
+    border-radius: 3px;
+    box-shadow: 8px 8px 0px var(--primary-pink);
+    transform: rotate(2deg);
+}
+
+.box-green {
+    background-color: var(--primary-green);
+    border-radius: var(--box-radius);
+    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.box-pink {
+    background-color: var(--primary-pink);
+    border-radius: 2.6rem 0.625rem;
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
+    /*padding-right: 1.5rem;
+    position: relative;
+    left: 0.5rem;*/
+}
+
+.box-tag {
+    border-radius: var(--box-radius);
+    border: var(--border-thick);
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
+    transform: rotate(-2deg);
+    color: var(--primary-red);
+    background-color: var(--primary-bg);
+    padding-top: 0.9rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.box-compact {
+    padding: 0.4rem;
+    padding-bottom: 0.15rem;
+    font-size: 0.9rem;
+}
+
+.box small, .box-alt small, .box-green small, .box-pink small {
+    font-family: var(--font-main);
+    font-size: 1rem;
+    text-transform: none;
+}
+
+/* ✅ Bottoni */
+.btn {
+    font-family: var(--font-title);
+    font-size: var(--font-size-btn);
+    padding-top: 1rem;
+    padding-bottom: 0.4rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: var(--shadow-standard);
+}
+
+.btn-primary {
+    background-color: var(--primary-red);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-green);
+}
+
+.btn-secondary {
+    background-color: var(--primary-yellow);
+    color: var(--text-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-pink);
+}
+
+/* ✅ Immagini */
+.rounded-avatar {
+    border-radius: 50%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border: var(--border-thick);
+    box-shadow: 6px 6px 0px var(--primary-shadow);
+}
+
+.square-image {
+    object-fit: cover;
+    border-radius: var(--box-radius);
+    border: var(--border-thick);
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
+    transform: rotate(-2deg);
+}
+
+/* ✅ Navbar */
+.navbar {
+    background-color: rgba(250, 243, 224, 0.9);
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-standard);
+    margin-top: 1rem;
+}
+
+.navbar-nav {
+    gap: 0.5rem;
+}
+
+.navbar-brand img {
+    height: 2.5rem;
+}
+
+/* ✅ Navigazione */
+.nav-item {
+    color: var(--text-color);
+    font-family: var(--font-title);
+    font-size: 1rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: var(--shadow-standard);
+    padding-left: 0.5rem;
+}
+
+.nav-item a {
+    position: relative; 
+    top: 6px;
+    color: var(--text-color) !important;
+}
+
+/* Cambia colore al bottone toggle */
+.navbar-toggler {
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+    border-color: var(--text-color) !important;
+    box-shadow: var(--shadow-standard);
+}
+
+.section-full {
+    min-height: 90vh;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+}
+
+.section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container p {
+    max-width: 80vw;
+    margin: auto;
+}
+
+.container small {
+    max-width: 50vw;
+    margin: auto;
+}
+
+.boxed {
+    border-radius: var(--box-radius);
+    border: var(--border-thick);
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.carousel {
+    padding-top: 2rem;
+}
+
+.carousel-item {
+    padding-bottom: 2rem;
+}
+
+.carousel-img {
+    max-height: 300px; /* Regola l'altezza massima delle immagini */
+    max-width: 50vw;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--primary-bg);
+}
+
+.carousel .caption {
+    position: relative; 
+    top: -2.5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    overflow: visible;
+}
+
+.caption small {
+    max-width: 300px;
+    display: inline-block;
+}
+
+.carousel-indicators li {
+    text-indent: -9999px; /* Nasconde i numeri fuori dallo schermo */
+    overflow: hidden;
+}
+
+.faq-btn {
+    width: 100%;
+    text-align: left;
+    font-weight: bold;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-family: var(--font-title);
+    color: var(--text-color);
+    padding: 1rem;
+    padding-bottom: 0.7rem;
+}
+
+.faq-text {
+    padding-bottom: 1rem;
 }
 
     </style>
-
-  </head>
-  <body>
-
-    <!-- Navbar fissa in alto -->
-    <nav class="navbar navbar-expand-md fixed-top">
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <nav class="container navbar navbar-expand-lg fixed-top mt-0 mt-sm-3">
         <div class="container-fluid">
-            <!-- Logo -->
-            <a class="navbar-brand" href="#">Little Billies</a>
-
-            <!-- Bottone di toggle per il menu mobile -->
-            <button class="custom-btn mobile-menu-btn navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
+            <a class="navbar-brand" href="#"><img src="imgs/logo.png" alt="Little Billies Logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
             </button>
-
-            <!-- Contenuto della navbar -->
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="custom-btn nav-link" href="#header">Home</a></li>
-                    <li class="nav-item"><a class="custom-btn nav-link" href="#">Chi Siamo</a></li>
-                    <li class="nav-item"><a class="custom-btn nav-link" href="#">Musica</a></li>
-                    <li class="nav-item"><a class="custom-btn nav-link" href="#">Contatti</a></li>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#storia">Cosa Facciamo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">Chi Siamo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contatti">Contatti</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <separator style="height: 5rem;"></separator>
+    <!-- Hero Section -->
+    <section id="home" class="section section-full">
+        <div class="container mt-5">
+            <h1 class="mb-3">La Colonna Sonora<br>della Tua Infanzia <span class="small">(o quasi)</span></h1>
+            <div class="row align-items-center justify-content-center g-0">
+                <div class="col-10 col-md-7 col-lg-5">
+                    <div class="box box-compact">Anteprima
+                    </div>
+                    <div class="box-alt d-flex p-0 m-3" style="position: relative; top: -40px;">
+                        <img src="imgs/vinile.png" alt="Il Baby Album" class="img-fluid">
+                    </div>
+                </div>
 
-    <div class="sections-wrapper">
+                <div class="col-lg-1"></div>
 
-        <section class="section" data-bg="planet">
-            <div class="section-background-wrapper">
-                <div class="section-background">
-                    <div class="section-background-content"></div>
+                <div class="col-12 col-md-8 col-lg-5 col-xl-4">
+                    <div class="d-lg-none mt-0 mt-md-2">
+                        <a class="btn btn-primary mx-1" href="#preview">🎵 Ascolta Ora</a>
+                        <a class="btn btn-secondary" href="#storia">Leggi la Storia</a>
+                    </div>
+                    <div class="mt-4 hero-text">
+                        <p>Sta per uscire <em>Il Baby Album!</em> 🚀<br>Ti invitiamo ad ascoltare in anteprima le <strong>10 tracce inedite</strong> con questa <strong>preview riservata</strong>. 🎶</p>
+                    </div>
+                    <div class="mt-3 d-none d-lg-block">
+                        <a class="btn btn-primary d-block" href="#preview">🎵 Ascolta Ora</a>
+                        <a class="btn btn-secondary my-3 d-block" href="#storia">📖 Leggi la Storia</a>
+                    </div>
                 </div>
             </div>
-            <div class="section-content container">
-                <div class="row align-items-center">
-                    <div class="col-md-1"></div>
-                    <div class="col-lg-3">
-                      <p class="h3">Ti presentiamo</p>
-                      <p class="display-1">Il Baby Album</p>
-                    </div>
+        </div>
+    </section>
+    
+    <section id="storia" class="section">
+        <div class="container">
+            <div class="boxed row align-items-center g-3" style="background: var(--secondary-blue);">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-4">
+                    <img src="imgs/squalo.png" alt="Squaletto" class="img-fluid rounded-avatar" style="max-width: 180px; background-color: var(--primary-bg);">
+                    <h2 class="mt-4">Squaletti in ascolto, attenzione!</h2>
+                    <p class="pb-md-3"><b>Baby Shark si prende una pausa</b>… È il arrivato il momento di tuffarsi in nuove avventure, tutte da cantare.</p>
+                </div>
+                <div class="col-lg-1"></div>
 
-                    <div class="col-md-6 custom-container pongo-box box-arancio">
-                        <div class="hero-background">
-                            <!-- Immagine floating in basso a sinistra -->
-                            <img src="imgs/hero-left.png" alt="Hero Left" class="hero-left">
-                            <!-- Immagine floating in basso a destra -->
-                            <img src="imgs/hero-right.png" alt="Hero Right" class="hero-right">
+                <div class="col-lg-4">
+                    <div class="box mx-5">
+                        <div class="box-alt m-4" style="background: var(--primary-blue);">
+                            <p>Ecco perchè siamo unici.</p>
+                            <a class="btn btn-primary m-auto my-3" href="#musica">Scoprilo</a>
                         </div>
-
-                        <div class="hero-container">
-                            <!-- Immagine centrata -->
-                            <div class="hero-center-wrapper">
-                                <!-- Elemento statico con ombra -->
-                                <img src="imgs/album-vinile.png" alt="Hero Center" class="img-fluid hero-center fixed">
-                                <!-- Elemento in rotazione -->
-                                <img src="imgs/album-vinile.png" alt="Hero Center" class="img-fluid hero-center rotating">
-                            </div>
-                            <div class="hero-footer">
-                                <button class="button-3d box-crema">Scoprilo</button>
-                            </div>
-                        </div>
                     </div>
+                </div>
 
-                    <div class="col-md-1"></div>
+                <div class="col-lg-1"></div>
+            </div>
+    </section>
+    
+    <section id="musica" class="section" style="background: var(--primary-yellow);">
+        <div class="container">
+            <h1>La Nostra Ricetta</h1>
+            <p class="my-3 mb-3">Ecco come sono nate 10 storie inedite, raccontate grazie al potere della musica, per <b>accendere l'attenzione</b> e <b>coltivare l'immaginazione</b>.</p>
+
+            <div class="row align-items-center justify-content-center g-3">
+                <div class="col-10 col-md-6 col-lg-4 d-flex flex-column">
+                    <div class="box">
+                        <h1>📖</h1>
+                        <p>Storia Coinvolgente</p>
+                        <small>Ogni canzone è un piccolo viaggio, pieno di sorprese e personaggi indimenticabili.</small>
+                    </div>
+                </div>
+
+                <div class="col-10 col-md-6 col-lg-4 d-flex flex-column">
+                    <div class="box-alt">
+                        <h1>🔍</h1>
+                        <p>Significato Nascosto</p>
+                        <small>Tra rime e melodia, si nascondono dettagli che solo i più attenti sapranno scoprire.</small>
+                    </div>
+                </div>
+
+                <div class="col-10 col-md-6 col-lg-4 d-flex flex-column">
+                    <div class="box-pink">
+                        <h1>💃</h1>
+                        <p>Musica Travolgente</p>
+                        <small>Ritmi freschi e dinamici, perfetti per scatenarsi e cantare a squarciagola.</small>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 d-flex flex-column">
+                    <img src="imgs/scooter2.png" alt="Monopattino" class="img-fluid rounded-avatar m-auto" style="max-height: 200px; background-color: var(--primary-bg);">
+                    <a href="#personaggi" class="btn btn-primary m-auto" style="z-index: 2; position: relative; top: -15px">💪 Scopri i personaggi!</a>
                 </div>
             </div>
-        </section>
+    </section>
+    
+    <section id="personaggi" class="section" style="background: var(--primary-pink);">
+        <div class="container">
+            <h1>Di Chi Parliamo</h1>
+            <p class="mt-3">Ogni canzone racconta una storia, e <b>ogni storia ha i suoi eroi</b>! Dai un’occhiata ai personaggi che danno vita alle nostre avventure musicali.</p>
 
-        <section class="section" data-bg="shark">
-            <div class="section-background-wrapper">
-                <div class="section-background" style="background-color: var(--brand-azzurro)">
-                    <div class="section-background-content img-deep-shadow"></div>
-                </div>
-            </div>
-            <div class="section-content container">
-                <div class="pongo-box box-crema glance-container p-5">
-                    <div class="row align-items-center">
-                      <div class="col-md-4 col-12">
-                        <img src="imgs/no-sharks.png" class="img-fluid img-shadow">
-                      </div>
-                      <div class="col-md-1"></div>
-                      <div class="col-md-6 col-12 text-start mt-5">
-                        <p class="display-3">Squaletti in ascolto, attenzione!</p>
-                        <p class="mt-3"><b>Baby Shark si prende una pausa</b>… È il arrivato il momento di tuffarsi in nuove avventure, tutte da cantare.</p>
-                      </div>
-                    </div>
+            <a class="btn btn-primary mt-3 mb-5" href="#preview">🎵 Ascolta L'album</a>
+
+            <div id="personaggiIndicators" class="boxed carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+              
+              <!-- Indicatori in alto -->
+              <ol class="carousel-indicators">
+                <li data-bs-target="#personaggiIndicators" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#personaggiIndicators" data-bs-slide-to="1"></li>
+                <li data-bs-target="#personaggiIndicators" data-bs-slide-to="2"></li>
+              </ol>
+
+              <!-- Controlli per il carosello -->
+              <a class="carousel-control-prev" href="#personaggiIndicators" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              </a>
+              <a class="carousel-control-next" href="#personaggiIndicators" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              </a>
+
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block rounded-avatar carousel-img" src="imgs/ciccio.png" alt="Ciccio Pasticcio">
+                  <div class="caption m-auto">
+                    <div class="m-auto"><div class="box-tag">Ciccio Pasticcio</div></div>
+                    <small style="height: 8rem;">Uno scoppiettante combinaguai con una fortuna sfacciata: ogni volta che inciampa, c’è sempre un amico pronto ad aiutarlo!</small>
                   </div>
                 </div>
-            </div>
-        </section>
-
-        <section id="ricetta" class="section">
-            <div class="section-background-wrapper">
-                <div class="section-background box-notte">
-                    <div class="section-background-content img-deep-shadow"></div>
-                </div>
-            </div>
-            <div class="section-content container d-flex flex-column">
-                  <div class="pongo-box box-miele">
-                    <p class="display-3 my-5">La Nostra Ricetta</p>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-4 text-start">
-                                <h1>📖</h1>
-                                <p><b>Storia Coinvolgente.</b> Ogni canzone è un piccolo viaggio, pieno di sorprese e personaggi indimenticabili.</p>
-                            </div>
-                            <div class="col-md-4 text-start">
-                                <h1>🔍</h1>
-                                <p><b>Significato Nascosto.</b> Tra rime e melodia, si nascondono dettagli che solo i più attenti sapranno scoprire.</p>
-                            </div>
-                            <div class="col-md-4 text-start">
-                                <h1>💃</h1>
-                                <p><b>Musica Travolgente.</b> Ritmi freschi e dinamici, perfetti per scatenarsi e cantare a squarciagola.</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="carousel-item">
+                  <img class="d-block rounded-avatar carousel-img" src="imgs/barby.png" alt="Barby Mita">
+                  <div class="caption m-auto">
+                    <div class="m-auto"><div class="box-tag">Barby Mita</div></div>
+                    <small style="height: 8rem;">Vuole diventare grande, ma si perde nei piccoli dettagli. Un giorno vuole conquistare il mondo, quello dopo sta ancora cercando le scarpe giuste!</small>
                   </div>
-
-                  <div class="container box-notte">
-                        <div class="row my-5 gy-3 align-items-center justify-content-center">
-                            <div class="col-md-1"></div>
-
-                            <div class="col-6 col-md-5 col-xl-4 col-xxl-3">
-                                <div class="pongo-box image-box m-auto" style="background-image: url('imgs/dieci.webp'); border-radius: var(--border-radius);">
-                                    <span class="title">10</span>
-                                    <span class="subtitle">originals</span>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <p class="h4 text-start">Ecco a te 10 storie inedite, raccontate grazie al potere della musica, per <b>accendere l'attenzione</b> e <b>coltivare l'immaginazione</b>.</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-            </div>
-        </section>
-
-        <section id="personaggi" class="section">
-            <div class="section-background-wrapper">
-                <div class="section-background">
-                    <div class="section-background-content img-deep-shadow"></div>
+                <div class="carousel-item">
+                  <img class="d-block rounded-avatar carousel-img" src="imgs/regnanti.png" alt="Re e Regina">
+                  <div class="caption m-auto">
+                    <div class="m-auto"><div class="box-tag">Re e Regina <span class="small">del Parco</span></div></div>
+                    <small style="height: 8rem;">Sfrecciano con i loro monopattini, ma mai senza casco! Veloci, eleganti e sempre pronti a nuove avventure tra le strade del parco!</small>
+                  </div>
                 </div>
+              </div>
+
             </div>
-            <div class="section-content container d-flex flex-column">
+        </div>
+    </section>
+
+    <section id="team" class="section" style="background: var(--primary-yellow);">
+        <div class="container">
+            <h1>Chi canta e chi suona?</h1>
+            <p class="mt-3">Due papà con la voglia di far ballare grandi e piccoli… ma non siamo soli! <b>Ospiti speciali</b> e <b>personaggi segreti</b> si nascondono tra le tracce.</p>
+            <a class="btn btn-primary mt-3 mb-5" href="#preview">🎵 Ascolta L'album</a>
+
+            <div class="boxed carousel row g-0">
               
-              <div class="row personaggi-section-header">
-                <div class="col-6"></div>
-                <p class="col display-3 text-end">Personaggi di tutto rispetto</p>
-              </div>
-              <div class="pongo-box box-arancio">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4 text-start">
-                            <img src="imgs/ciccio-pasticcio.webp" class="img-fluid rounded-circle img-shadow p-3">
-                            <h1>Ciccio Pasticcio</h1>
-                            <p>Uno scoppiettante combinaguai con una fortuna sfacciata: ogni volta che inciampa, c’è sempre un amico pronto ad aiutarlo!</p>
-                        </div>
-                        <div class="col-md-4 text-start">
-                            <img src="imgs/barby-mita.png" class="img-fluid rounded-circle img-shadow p-3">
-                            <h1>Barby Mita</h1>
-                            <p>Vuole diventare grande, ma si perde nei piccoli dettagli. Un giorno vuole conquistare il mondo, quello dopo sta ancora cercando le scarpe giuste!</p>
-                        </div>
-                        <div class="col-md-4 text-start">
-                            <img src="imgs/re-regina.png" class="img-fluid rounded-circle img-shadow p-3">
-                            <h1>Re e Regina del Parco</h1>
-                            <p>Sfrecciano con i loro monopattini, ma mai senza casco! Veloci, eleganti e sempre pronti a nuove avventure tra le strade del parco!</p>
-                        </div>
-                    </div>
-                </div>
-              </div>
-            </div>
-        </section>
-
-
-        <section class="section" data-bg="crepe-right">
-            <div class="section-background-wrapper">
-                <div class="section-background" style="background-color: var(--brand-miele)">
-                    <div class="section-background-content img-deep-shadow"></div>
-                </div>
-            </div>
-            <div class="section-content container d-flex flex-column" style="color: var(--brand-polvere);">
-              <div class="">
-                <div class="row">
-                    <div class="col-md-2"></div>
-                    <div class="col text-start">
-                        <p class="display-3 mt-5">Lo Sponsor</p>
-                        <p class="h3">(non ufficiale)</p>
-                    </div>
-                </div>
-                <!-- <p class="display-1 mb-5">La Crêpe Suzette</p> -->
-                <div class="container mt-5">
-                    <div class="row align-items-end">
-                        <div class="col-md-2"></div>
-                        <div class="col-5 col-md-2 text-start subheadline">
-                            <p>Perché non esiste un problema che una crêpe ben fatta non possa risolvere.</p>
-                        </div>
-                        <div class="col-md-6">
-                            <img src="imgs/crepe.png" class="img-fluid img-shadow" style="">
-                        </div>
-                    </div>
-                </div>
-              </div>
-            </div>
-        </section>
-
-
-        <section id="team" class="section">
-            <div class="section-background-wrapper">
-                <div class="section-background">
-                    <div class="section-background-content img-deep-shadow"></div>
-                </div>
-            </div>
-            <div class="section-content container align-items-start">
-              
-              <div class="row">
-                <div class="col-12 col-xl-6">
-                    <p class="col-md-6 col-xl-8 display-3 text-start">Chi canta e chi suona?</p>
-                    <div class="col-md-6 col-xl-4"></div>
-                    <div class="col-md-6 col-xl-8 text-start subheadline mt-3">
-                      <p>Due papà con la voglia di far ballare grandi e piccoli… ma non siamo soli! <b>Ospiti speciali</b> e personaggi segreti si nascondono tra le tracce.</p>
-                    </div>
-                </div>
-
-                <div class="col-12 col-xl-5 pongo-box box-crema">
-                    <div class="container">
-                        <div class="row justify-content-center g-3">
-                            <div class="col-md-4 col-xl-12 text-start">
-                                <div class="d-flex justify-content-center">
-                                    <img src="imgs/nebillo.jpeg" class="img-fluid rounded-circle img-bw img-shadow p-3 w-100" style="max-width: 200px;">
-                                </div>
-                                <p><strong>Nebil:</strong> Sviluppatore software di giorno, musicista di notte (e a volte anche il contrario). 
+              <div class="col-md-6">
+              <img class="img-fluid rounded-avatar carousel-img" src="imgs/nebillo.png" alt="nebillo" style="background-color: var(--primary-green); max-width: 200px;">
+              <div class="caption">
+                <div class="m-auto"><div class="box-tag">Nebil</div></div>
+                <small>Sviluppatore software di giorno, musicista di notte. 
                                     Dopo un percorso alla <a href="https://instagram.com/nebilmattia" target="_blank">Blank Music School</a>, ha combinato il codice con le note, 
-                                    lanciando <a href="https://depop.com" target="_blank">startup</a> di successo e nuove avventure sonore.</p>
-                            </div>
-                            <div class="col-md-1 col-xl-12"></div>
-                            <div class="col-md-4 col-xl-12 text-start">
-                                <div class="d-flex justify-content-center">
-                                    <img src="imgs/misterfil.jpg" class="img-fluid rounded-circle img-bw img-shadow p-3 w-100" style="max-width: 200px;">
-                                </div>
-                                <p><strong>Filippo:</strong> Produttore con 20 anni di esperienza, sempre alla ricerca del suono perfetto. 
-                                    Ha dato vita ai progetti <a href="https://instagram.com/djmisterfil" target="_blank">Mister Fil</a> e <a href="https://instagram.com/venetiancustomgarage" target="_blank">Venetian Custom Garage</a>, 
-                                    mentre organizza eventi musicali che fanno tremare i pavimenti (e i vicini).</p>
-                            </div>
-                        </div>
-                    </div>
+                                    lanciando <a href="https://depop.com" target="_blank">startup</a> di successo e nuove avventure sonore.</small>
               </div>
-          </div>
-        </section>
-
-        <section id="future" class="section">
-            <div class="section-background-wrapper">
-                <div class="section-background" style="background-color: var(--brand-notte-morbido);">
-                    <div class="section-background-content img-deep-shadow"></div>
-                </div>
             </div>
-            <div class="section-content container d-flex flex-column align-items-start">
-                  <div class="row" style="color: var(--brand-azzurro);">
-                    <p class="col-md-6 display-3 text-start">E dopo l'album?</p>
-                    <div class="col-md-6"></div>
-                    <div class="col-md-6 text-start subheadline">
-                      <p>Non ci fermiamo qui. Questo è solo l’inizio di un viaggio musicale… e abbiamo già in mente il prossimo passo!</p>
-                    </div>
-                  </div>
-                  <div class="pongo-box box-crema">
-                    <!-- Carosello Bootstrap -->
-                    <div id="customCarousel" class="carousel slide col-md-6 col-lg-4 m-auto" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <!-- Elemento 1 -->
-                            <div class="carousel-item active">
-                                <div class="carousel-content">
-                                    <img src="imgs/karaoke.webp" class="carousel-img img-fluid" alt="Karaoke App">
-                                    <p class="carousel-text">Un'app karaoke per iPhone, perfetta per tutta la famiglia.</p>
-                                </div>
-                            </div>
-                            <!-- Elemento 2 -->
-                            <div class="carousel-item">
-                                <div class="carousel-content">
-                                    <img src="imgs/libro.webp" class="carousel-img img-fluid" alt="Libri musicali">
-                                    <p class="carousel-text">Libri musicali personalizzati per bambini con canzoni dedicate.</p>
-                                </div>
-                            </div>
-                            <!-- Elemento 3 -->
-                            <div class="carousel-item">
-                                <div class="carousel-content">
-                                    <img src="imgs/video.webp" class="carousel-img img-fluid" alt="Video educativi">
-                                    <p class="carousel-text">Video e altri contenuti musicali per divertirsi imparando.</p>
-                                </div>
-                            </div>
-                        </div>
 
-                        <!-- Frecce di navigazione personalizzate -->
-                        <button class="carousel-control-prev custom-arrow" type="button" data-bs-target="#customCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Precedente</span>
-                        </button>
-                        <button class="carousel-control-next custom-arrow" type="button" data-bs-target="#customCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Successivo</span>
-                        </button>
-                    </div>
-
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-4 text-start">
-                                <h1>🎶</h1>
-                                <p>Abbiamo già idee pronte per nuove tracce. Quale sarà la prossima avventura musicale?</p>
-                            </div>
-                            <div class="col-md-4 text-start">
-                                <h1>🎤</h1>
-                                <p>Ci piacerebbe portare la nostra musica dal vivo… magari con qualche sorpresa!</p>
-                            </div>
-                            <div class="col-md-4 text-start">
-                                <h1>📩</h1>
-                                <p>Chi si iscrive alla newsletter avrà accesso a demo, retroscena e chicche in anteprima!</p>
-                            </div>
-                        </div>
-                    </div>
-
-                  </div>
-                </div>
+            <div class="col-md-6">
+              <img class="img-fluid rounded-avatar carousel-img" src="imgs/misterfil.png" alt="Mister Fil" style="background-color: var(--primary-green); max-width: 200px;">
+              <div class="caption">
+                <div class="m-auto"><div class="box-tag">Filippo</div></div>
+                <small>Produttore con 20 anni di esperienza. 
+                                    Ha dato vita ai progetti <a href="https://instagram.com/djmisterfil" target="_blank">Mister Fil</a> e <a href="https://instagram.com/venetiancustomgarage" target="_blank">Venetian Custom Garage</a>, 
+                                    mentre organizza eventi musicali che fanno tremare i pavimenti (e i vicini).</small>
+              </div>
             </div>
-        </section>
-
-        <section id="newsletter" class="section"  data-bg="planet-bottom">
-            <div class="section-background-wrapper">
-                <div class="section-background">
-                    <div class="section-background-content img-deep-shadow"></div>
-                </div>
-            </div>
-            <div class="section-content container align-items-start">
               
-              <div class="row g-5">
-                <div class="col-12 col-xl-6">
-                    <div class="col-md-6 col-xl-9 text-start">
-                        <p class="display-3">Il club segreto dei piccoli ascoltatori</p>
-                        <p class="subheadline mt-3">Iscriviti e ricevi subito il link per ascoltare l’album in anteprima! <b>Solo per chi è dentro al club.</b></p>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="preview" class="section">
+        <div class="container">
+
+                <div class="row align-items-center justify-content-center g-3">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-5">
+                        <h2 class="mt-4">Un'anteprima qui, il resto nella tua mail</h2>
+                        <p class="">Scopri un assaggio del <em>Baby Album</em>, poi registrati per ricevere <strong>l'album completo </strong> nella tua mail. Nessun abbonamento, solo musica da cantare!</p>
+                    </div>
+                    <div class="col-lg-1"></div>
+
+                    <div class="col-lg-4">
+                        <div class="box p-0" style="background-color: var(--primary-green);">
+                            
+                            <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2010823739%3Fsecret_token%3Ds-Gt5pYtt71Fo&color=%2353D769&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-1"></div>
+                </div>
+
+                <div class="mt-3 row align-items-center justify-content-center g-3">
+                    <div class="col-lg-1"></div>
+
+                    <div class="col-10 col-md-8 col-lg-5">
+                        <h1>Il No-Squaletto Club</h1>
+                        <p class="small">Crediamo che la musica possa far crescere e divertire. Diamo spazio a nuove storie che accendono l'immaginazione. La rivoluzione inizia anche da te!</p>
+
                         <form class="newsletter">
                             <div class="mt-3">
-                                <input class="pongo-box box-crema w-100" type="text" id="firstname" name="firstname" placeholder="Nome (opzionale)" aria-label="Nome">
+                                <input class="box-pink m-0 w-100" style="background-color: var(--primary-bg);" type="text" id="firstname" name="firstname" placeholder="Nome (opzionale)" aria-label="Nome">
                             </div>
                             <div class="mt-3">
-                                <input class="pongo-box box-crema w-100" type="email" id="email" name="email" placeholder="La tua email" aria-label="Email" required>
+                                <input class="box-pink m-0 w-100" style="background-color: var(--primary-bg);" type="email" id="email" name="email" placeholder="La tua email" aria-label="Email" required>
                             </div>
                             <div class="mt-3">
-                                <button class="button-3d box-arancio w-100" type="submit" onclick="event.preventDefault()">Iscriviti</button>
+                                <button class="btn btn-primary w-100" type="submit" onclick="event.preventDefault()">Entra nel club</button>
                             </div>
                         </form>
                     </div>
-                </div>
 
-                <div class="col-12 col-xl-5 pongo-box box-miele">
-                    <div class="container">
-                        <div class="row justify-content-center g-3">
-                            <p class="h3 mb-3">Perche iscriversi?</p>
-                        </div>
-                        <div class="row justify-content-center g-3">
-                            <div class="col-md-4 col-xl-12 text-start">
-                                <h1>📥</h1>
-                                <p><b>Ottieni il link diretto allo Streaming</b>: Iscriviti e ascolta l’album in anteprima, prima di tutti, senza costi di abbonamento!</p>
-                            </div>
-                            <div class="col-md-4 col-xl-12 text-start">
-                                <h1>✨</h1>
-                                <p><b>Contenuti esclusivi</b>: Ricevi curiosità, retroscena e chicche riservate ai membri del club.</p>
-                            </div>
-                            <div class="col-md-4 col-xl-12 text-start">
-                                <h1>🎧</h1>
-                                <p><b>Influenza l’album</b>: Il tuo Feedback ci aiuterà a modellare il progetto fino alla release pubblica.</p>
-                            </div>
+                    <div class="col-lg-1"></div>
+
+                    <div class="col-8 col-md-6 col-lg-4">
+                        <div class="box-alt">
+                            Iscriviti adesso
+                            <small> per ricevere subito l'<strong>album completo</strong>, <strong>contenuti esclusivi</strong> futuri e poter <strong>influenzare i progressi</strong> del <em>Baby Album</em> fino alla sua uscita ufficiale. 🎶✨</small>
                         </div>
                     </div>
-              </div>
-          </div>
-        </section>
 
-    </div>
+                    <div class="col-lg-1"></div>
 
+                </div>
+            </div>
+    </section>
 
-    <footer class="container-fluid footer-box box-crema">
+    <section id="faq" class="section">
         <div class="container">
-            <div class="row justify-content-center align-items-center g-3">
-                <div class="col-lg-2"></div>
-                <div class="col-4 col-lg-2">
-                    <div class="d-flex justify-content-center">
-                        <a href="https://instagram.com/littlebilliesofficial" target="_blank"><img src="imgs/insta.png" class="img-fluid rounded-circle img-deep-shadow p-3 w-100" style="max-width: 150px;"></a>
+            <h2 class="text-center mb-3">❓ Domande Frequenti</h2>
+            
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 accordion" id="faqAccordion">
+                    <!-- FAQ 1 -->
+                    <div class="boxed mb-3">
+                        <button class="faq-btn" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            Per che età è adatto l’album?
+                        </button>
+                        <div id="faq1" class="collapse" data-bs-parent="#faqAccordion">
+                            <p class="faq-text">Il <em>Baby Album</em> è pensato per bambini dai <strong>1 ai 5 anni</strong>, con canzoni che stimolano la fantasia e il movimento. 🎶✨</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="boxed mb-3">
+                        <button class="faq-btn" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            Come posso contribuire al progetto?
+                        </button>
+                        <div id="faq2" class="collapse" data-bs-parent="#faqAccordion">
+                            <p class="faq-text">Ti invieremo <strong>sondaggi esclusivi</strong> per aiutare a scegliere dettagli come la copertina o i video musicali. Il tuo parere conta! 🎨📩</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="boxed mb-3">
+                        <button class="faq-btn" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            Posso ascoltarlo su Spotify?
+                        </button>
+                        <div id="faq3" class="collapse" data-bs-parent="#faqAccordion">
+                            <p class="faq-text">Non ancora! Per ora è disponibile <strong>solo su SoundCloud</strong>, perché stiamo perfezionando l’album grazie ai tuoi feedback. 🚀🎧</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="boxed mb-3">
+                        <button class="faq-btn" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            È gratuito?
+                        </button>
+                        <div id="faq4" class="collapse" data-bs-parent="#faqAccordion">
+                            <p class="faq-text">Sì, l’anteprima è <strong>completamente gratuita</strong>. Ti basta registrarti per ricevere il link di ascolto. 🆓🎵</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 5 -->
+                    <div class="boxed">
+                        <button class="faq-btn" data-bs-toggle="collapse" data-bs-target="#faq5">
+                            Posso condividerlo con altri genitori?
+                        </button>
+                        <div id="faq5" class="collapse" data-bs-parent="#faqAccordion">
+                            <p class="faq-text">Certo! Manda il link a questa pagina a chi potrebbe apprezzare un’alternativa musicale per i più piccoli. 🎁👶</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-4 col-lg-2">
-                    <div class="d-flex justify-content-center">
-                        <a href="mailto:info@littlebillies.com"><img src="imgs/mail.png" class="img-fluid rounded-circle img-deep-shadow p-3 w-100" style="max-width: 150px;"></a>
+            </div>
+        </div>
+
+    </section>
+    
+    <!-- Footer -->
+    <footer id="contatti">
+        <div class="container-fluid" style="background-color: var(--secondary-blue);">
+            <div class="container py-3">
+                <div class="row justify-content-center align-items-center g-1">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-5">
+                            <a href="#"><img class="img-fluid" src="imgs/logo.png" alt="Little Billies Logo" style="max-width: 300px"></a>
                     </div>
+                    
+                    <div class="col-lg-1"></div>
+
+                    <div class="col-8 col-md-6 col-lg-4">
+                        <div class="box-alt" style="position: relative; top: 1.4rem; background-color: var(--primary-green);">
+                            <small>
+                                Nebil Kriedi e Filippo Ghezzo si identificano come autori e 
+                                proprietari dell'opera Little Billies. Tutti i diritti riservati.
+                                <b>littlebilliesofficial@gmail.com</b>
+                            </small>
+                        </div>
+                        <div>
+                            <a style="position: relative; top: -1.8rem;" class="box-tag me-3" href="https://instagram.com/littlebilliesofficial" target="_blank">Insta</a>
+                            <a style="position: relative; top: -1.4rem;" class="box-tag" href="mailto:littlebilliesofficial@gmail.com">Fax</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-1"></div>
                 </div>
-                <div class="col-lg-2"></div>
-                <div class="col text-center small">
-                    <p>
-                        Nebil Kriedi e Filippo Ghezzo si identificano come autori e 
-                        proprietari dell'opera Little Billies. Tutti i diritti riservati.<br>
-                        <a href="mailto:info@littlebillies.com">info@littlebillies.com</a>
-                    </p>
+
+                <div class="row align-items-center justify-content-center g-3">
+                    <div class="col"><b>Wow. Sei arrviato a fine pagina.</b></div>
                 </div>
             </div>
       </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  </body>
+</body>
 </html>
