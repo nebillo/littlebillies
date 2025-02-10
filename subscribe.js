@@ -22,35 +22,44 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault(); // Evita il refresh della pagina
 
         // Disabilita il bottone e cambia il testo
+        const oldText = submitButton.textContent;
         submitButton.disabled = true;
-        submitButton.textContent = "Attendere...";
-
-        // Ottieni i dati dal form
-        const formData = {
-            name: form.querySelector("#firstname").value.trim(),
-            email: form.querySelector("#email").value.trim(),
-        };
+        submitButton.textContent = "Un attimo…";
 
         try {
-            const response = await fetch("https://nebilmattia.com/subscribe.php", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(formData),
+            // Esegui reCAPTCHA v3 e ottieni il token
+            grecaptcha.ready(async function () {
+                const token = await grecaptcha.execute("6LcZP9MqAAAAAMIwTVwdwc16UoEBY2ZHPr64bheQ", { action: "subscribe" });
+
+                // Ottieni i dati dal form
+                const formData = {
+                    name: form.querySelector("#firstname").value.trim(),
+                    email: form.querySelector("#email").value.trim(),
+                    recaptcha_token: token // Aggiungi il token al payload
+                };
+
+                // Invia i dati con Fetch API
+                const response = await fetch("https://nebilmattia.com/subscribe.php", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(formData),
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    // ✅ Successo: svuota i campi e mostra il messaggio verde
+                    form.querySelector("#firstname").value = "";
+                    form.querySelector("#email").value = "";
+                    showMessage(confirmationBox);
+                } else {
+                    // ❌ Errore: mostra il messaggio rosso senza svuotare i campi
+                    showMessage(errorBox);
+                }
             });
 
-            const result = await response.json();
-
-            if (response.ok && result.success) {
-                // ✅ Successo: svuota i campi e mostra il messaggio verde
-                form.querySelector("#firstname").value = "";
-                form.querySelector("#email").value = "";
-                showMessage(confirmationBox);
-            } else {
-                // ❌ Errore: mostra il messaggio rosso senza svuotare i campi
-                showMessage(errorBox);
-            }
         } catch (error) {
             // ❌ Errore di rete
             showMessage(errorBox);
@@ -58,6 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Riabilita il bottone
         submitButton.disabled = false;
-        submitButton.textContent = "Entra nel club";
+        submitButton.textContent = oldText;
     });
 });

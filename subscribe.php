@@ -14,6 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] === "OPTIONS") {
 }
 
 // Recupera la API Key da variabile d'ambiente
+$recaptchaSecret = getenv("RECAPTCHA_SECRET");;
 $api_key = getenv("BREVO_API_KEY");
 $LIST_ID = 3;  // ID della lista su Brevo
 
@@ -82,6 +83,24 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (!$email) {
         echo json_encode(["success" => false, "error" => "Email is required."]);
         http_response_code(400);
+        exit;
+    }
+
+    // Verifica se il token reCAPTCHA è presente
+    $recaptchaToken = $inputData["recaptcha_token"] ?? null;
+    if (!$recaptchaToken) {
+        echo json_encode(["success" => false, "error" => "Verifica CAPTCHA mancante."]);
+        exit;
+    }
+    
+    // Verifica il token reCAPTCHA con Google
+    $recaptchaUrl = "https://www.google.com/recaptcha/api/siteverify";
+    $response = file_get_contents($recaptchaUrl . "?secret=" . $recaptchaSecret . "&response=" . $recaptchaToken);
+    $responseKeys = json_decode($response, true);
+
+    // Controlla il punteggio reCAPTCHA (consigliato > 0.5)
+    if (!$responseKeys["success"] || $responseKeys["score"] < 0.5) {
+        echo json_encode(["success" => false, "error" => "Bot rilevato."]);
         exit;
     }
 
