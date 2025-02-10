@@ -2,6 +2,17 @@
 
 header("Content-Type: application/json");
 
+// Abilita CORS per tutte le origini
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
+
+// Gestisce le richieste OPTIONS (preflight request)
+if ($_SERVER["REQUEST_METHOD"] === "OPTIONS") {
+    http_response_code(200);
+    exit;
+}
+
 // Recupera la API Key da variabile d'ambiente
 $api_key = getenv("BREVO_API_KEY");
 $LIST_ID = 3;  // ID della lista su Brevo
