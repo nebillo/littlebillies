@@ -1,5 +1,11 @@
+# per usare un server python (long running)
 #run = "python3 -m http.server 8080"
-run = "source venv/bin/activate && python main.py"
+
+# per attivare server con newsletter
+# run = "source venv/bin/activate && python main.py"
+
+# per php
+run = "php -S 0.0.0.0:8080"
 
 [nix]
 channel = "stable-24_05"
