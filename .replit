@@ -1,4 +1,5 @@
-run = "python3 -m http.server 8080"
+#run = "python3 -m http.server 8080"
+run = "source venv/bin/activate && python main.py"
 
 [nix]
 channel = "stable-24_05"
