@@ -3,7 +3,7 @@
 header("Content-Type: application/json");
 
 // Abilita CORS per tutte le origini
-header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Origin: https://littlebillies.replit.app");
 header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 
@@ -87,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     // Verifica se il token reCAPTCHA è presente
-    $recaptchaToken = $inputData["recaptcha_token"] ?? null;
+    $recaptchaToken = $input_data["recaptcha_token"] ?? null;
     if (!$recaptchaToken) {
         echo json_encode(["success" => false, "error" => "Verifica CAPTCHA mancante."]);
         exit;
@@ -100,7 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     // Controlla il punteggio reCAPTCHA (consigliato > 0.5)
     if (!$responseKeys["success"] || $responseKeys["score"] < 0.5) {
-        echo json_encode(["success" => false, "error" => "Bot rilevato."]);
+        echo json_encode(["success" => false, "error" => $responseKeys]);
         exit;
     }
 
