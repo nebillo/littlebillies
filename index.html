@@ -388,16 +388,16 @@ h2, .display-2 {
     <!-- Navbar -->
     <nav class="container navbar navbar-expand-lg fixed-top mt-0 mt-sm-3">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="imgs/logo.png" alt="Little Billies Logo"></a>
+            <a class="navbar-brand" href="#" data-click-event="menu_logo"><img src="imgs/logo.png" alt="Little Billies Logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto my-3 my-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#storia">Cosa Facciamo</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#team">Chi Siamo</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contatti">Contatti</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#home" data-click-event="menu_home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#storia" data-click-event="menu_cosa-facciamo">Cosa Facciamo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team" data-click-event="menu_chi-siamo">Chi Siamo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contatti" data-click-event="menu_contatti">Contatti</a></li>
                 </ul>
             </div>
         </div>
@@ -420,15 +420,15 @@ h2, .display-2 {
 
                 <div class="col-12 col-md-8 col-lg-5 col-xl-4">
                     <div class="d-lg-none mt-0 mt-md-2">
-                        <a class="btn btn-primary mx-1" href="#preview">🎵 Ascolta Ora</a>
-                        <a class="btn btn-secondary" href="#storia">Leggi la Storia</a>
+                        <a class="btn btn-primary mx-1" href="#preview" data-click-event="hero_ascolta-ora">🎵 Ascolta Ora</a>
+                        <a class="btn btn-secondary" href="#storia" data-click-event="hero_leggi-storia">Leggi la Storia</a>
                     </div>
                     <div class="mt-4 hero-text">
                         <p>Sta per uscire <em>Il Baby Album!</em> 🚀<br>Ti invitiamo ad ascoltare in anteprima le <strong>10 tracce inedite</strong> con questa <strong>preview riservata</strong>. 🎶</p>
                     </div>
                     <div class="mt-3 d-none d-lg-block">
-                        <a class="btn btn-primary d-block" href="#preview">🎵 Ascolta Ora</a>
-                        <a class="btn btn-secondary my-3 d-block" href="#storia">📖 Leggi la Storia</a>
+                        <a class="btn btn-primary d-block" href="#preview" data-click-event="hero_ascolta-ora">🎵 Ascolta Ora</a>
+                        <a class="btn btn-secondary my-3 d-block" href="#storia" data-click-event="hero_leggi-storia">📖 Leggi la Storia</a>
                     </div>
                 </div>
             </div>
@@ -442,7 +442,7 @@ h2, .display-2 {
                 <div class="col-lg-4">
                     <img src="imgs/squalo.png" alt="Squaletto" class="img-fluid rounded-avatar" style="max-width: 180px; background-color: var(--primary-bg);">
                     <h2 class="mt-4">Squaletti in ascolto, attenzione!</h2>
-                    <p class="pb-md-3"><b>Baby Shark si prende una pausa</b>… È il arrivato il momento di tuffarsi in nuove avventure, tutte da cantare.</p>
+                    <p class="pb-md-3" data-view-event="storia_main-message"><b>Baby Shark si prende una pausa</b>… È il arrivato il momento di tuffarsi in nuove avventure, tutte da cantare.</p>
                 </div>
                 <div class="col-lg-1"></div>
 
@@ -450,7 +450,7 @@ h2, .display-2 {
                     <div class="box mx-5">
                         <div class="box-alt m-4" style="background: var(--primary-blue);">
                             <p>Ecco perchè siamo unici.</p>
-                            <a class="btn btn-primary m-auto my-3" href="#musica">Scoprilo</a>
+                            <a class="btn btn-primary m-auto my-3" href="#musica" data-click-event="storia_scopri-stile">Scoprilo</a>
                         </div>
                     </div>
                 </div>
@@ -468,7 +468,7 @@ h2, .display-2 {
                 <div class="col-10 col-md-6 col-lg-4 d-flex flex-column">
                     <div class="box">
                         <h1>📖</h1>
-                        <p>Storia Coinvolgente</p>
+                        <p data-view-event="musica_box1">Storia Coinvolgente</p>
                         <small>Ogni canzone è un piccolo viaggio, pieno di sorprese e personaggi indimenticabili.</small>
                     </div>
                 </div>
@@ -476,7 +476,7 @@ h2, .display-2 {
                 <div class="col-10 col-md-6 col-lg-4 d-flex flex-column">
                     <div class="box-alt">
                         <h1>🔍</h1>
-                        <p>Significato Nascosto</p>
+                        <p data-view-event="musica_box2">Significato Nascosto</p>
                         <small>Tra rime e melodia, si nascondono dettagli che solo i più attenti sapranno scoprire.</small>
                     </div>
                 </div>
@@ -484,14 +484,14 @@ h2, .display-2 {
                 <div class="col-10 col-md-6 col-lg-4 d-flex flex-column">
                     <div class="box-pink">
                         <h1>💃</h1>
-                        <p>Musica Travolgente</p>
+                        <p data-view-event="musica_box3">Musica Travolgente</p>
                         <small>Ritmi freschi e dinamici, perfetti per scatenarsi e cantare a squarciagola.</small>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4 d-flex flex-column">
                     <img src="imgs/scooter2.png" alt="Monopattino" class="img-fluid rounded-avatar m-auto" style="max-height: 200px; background-color: var(--primary-bg);">
-                    <a href="#personaggi" class="btn btn-primary m-auto" style="z-index: 2; position: relative; top: -15px">💪 Scopri i personaggi!</a>
+                    <a href="#personaggi" class="btn btn-primary m-auto" style="z-index: 2; position: relative; top: -15px" data-click-event="musica_scopri-personaggi">💪 Scopri i personaggi!</a>
                 </div>
             </div>
     </section>
@@ -501,7 +501,7 @@ h2, .display-2 {
             <h1>Di Chi Parliamo</h1>
             <p class="mt-3">Ogni canzone racconta una storia, e <b>ogni storia ha i suoi eroi</b>! Dai un’occhiata ai personaggi che danno vita alle nostre avventure musicali.</p>
 
-            <a class="btn btn-primary mt-3 mb-5" href="#preview">🎵 Ascolta L'album</a>
+            <a class="btn btn-primary mt-3 mb-5" href="#preview" data-click-event="personaggi_ascolta-album">🎵 Ascolta L'album</a>
 
             <div id="personaggiIndicators" class="boxed carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
               
@@ -522,21 +522,21 @@ h2, .display-2 {
 
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img class="d-block rounded-avatar carousel-img" src="imgs/ciccio.png" alt="Ciccio Pasticcio">
+                  <img class="d-block rounded-avatar carousel-img" src="imgs/ciccio.png" alt="Ciccio Pasticcio" data-view-event="personaggi_ciccio">
                   <div class="caption m-auto">
                     <div class="m-auto"><div class="box-tag">Ciccio Pasticcio</div></div>
                     <small style="height: 8rem;">Uno scoppiettante combinaguai con una fortuna sfacciata: ogni volta che inciampa, c’è sempre un amico pronto ad aiutarlo!</small>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block rounded-avatar carousel-img" src="imgs/barby.png" alt="Barby Mita">
+                  <img class="d-block rounded-avatar carousel-img" src="imgs/barby.png" alt="Barby Mita" data-view-event="personaggi_barby-mita">
                   <div class="caption m-auto">
                     <div class="m-auto"><div class="box-tag">Barby Mita</div></div>
                     <small style="height: 8rem;">Vuole diventare grande, ma si perde nei piccoli dettagli. Un giorno vuole conquistare il mondo, quello dopo sta ancora cercando le scarpe giuste!</small>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block rounded-avatar carousel-img" src="imgs/regnanti.png" alt="Re e Regina">
+                  <img class="d-block rounded-avatar carousel-img" src="imgs/regnanti.png" alt="Re e Regina" data-view-event="personaggi_re-e-regina">
                   <div class="caption m-auto">
                     <div class="m-auto"><div class="box-tag">Re e Regina <span class="small">del Parco</span></div></div>
                     <small style="height: 8rem;">Sfrecciano con i loro monopattini, ma mai senza casco! Veloci, eleganti e sempre pronti a nuove avventure tra le strade del parco!</small>
@@ -552,12 +552,12 @@ h2, .display-2 {
         <div class="container">
             <h1>Chi canta e chi suona?</h1>
             <p class="mt-3">Due papà con la voglia di far ballare grandi e piccoli… ma non siamo soli! <b>Ospiti speciali</b> e <b>personaggi segreti</b> si nascondono tra le tracce.</p>
-            <a class="btn btn-primary mt-3 mb-5" href="#preview">🎵 Ascolta L'album</a>
+            <a class="btn btn-primary mt-3 mb-5" href="#preview" data-click-event="team_ascolta-album">🎵 Ascolta L'album</a>
 
             <div class="boxed carousel row g-0">
               
               <div class="col-md-6">
-              <img class="img-fluid rounded-avatar carousel-img" src="imgs/nebillo.png" alt="nebillo" style="background-color: var(--primary-green); max-width: 200px;">
+              <img class="img-fluid rounded-avatar carousel-img" src="imgs/nebillo.png" alt="nebillo" style="background-color: var(--primary-green); max-width: 200px;" data-view-event="team_nebillo">
               <div class="caption">
                 <div class="m-auto"><div class="box-tag">Nebil</div></div>
                 <small>Sviluppatore software di giorno, musicista di notte. 
@@ -567,7 +567,7 @@ h2, .display-2 {
             </div>
 
             <div class="col-md-6">
-              <img class="img-fluid rounded-avatar carousel-img" src="imgs/misterfil.png" alt="Mister Fil" style="background-color: var(--primary-green); max-width: 200px;">
+              <img class="img-fluid rounded-avatar carousel-img" src="imgs/misterfil.png" alt="Mister Fil" style="background-color: var(--primary-green); max-width: 200px;" data-view-event="team_misterfil">
               <div class="caption">
                 <div class="m-auto"><div class="box-tag">Filippo</div></div>
                 <small>Produttore con 20 anni di esperienza. 
@@ -593,7 +593,7 @@ h2, .display-2 {
                     <div class="col-lg-1"></div>
 
                     <div class="col-lg-4">
-                        <div class="box p-0" style="background-color: var(--primary-green);">
+                        <div class="box p-0" style="background-color: var(--primary-green);" data-view-event="preview_soundcloud">
                             
                             <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1952761675%3Fsecret_token%3Ds-B1S0oYHRn0V&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
 
@@ -609,7 +609,7 @@ h2, .display-2 {
                         <h1>Il No-Squaletto Club</h1>
                         <p class="small">Crediamo che la musica possa far crescere e divertire. Diamo spazio a nuove storie che accendono l'immaginazione. La rivoluzione inizia anche da te!</p>
 
-                        <form class="newsletter">
+                        <form class="newsletter" data-view-event="preview_form">
                             <div class="mt-3">
                                 <input class="box-pink m-0 w-100" style="background-color: var(--primary-bg);" type="text" id="firstname" name="firstname" placeholder="Nome (opzionale)" aria-label="Nome">
                             </div>
@@ -617,16 +617,16 @@ h2, .display-2 {
                                 <input class="box-pink m-0 w-100" style="background-color: var(--primary-bg);" type="email" id="email" name="email" placeholder="La tua email" aria-label="Email" required>
                             </div>
                             <div class="mt-3">
-                                <button class="btn btn-primary w-100" type="submit">Entra nel club</button>
+                                <button class="btn btn-primary w-100" type="submit" data-click-event="newsletter_submit">Entra nel club</button>
                             </div>
                         </form>
 
-                        <div id="confirmation" class="box d-none fade" style="background-color: var(--primary-green); position: relative; top: -1rem; transition: opacity 0.5s;">
+                        <div id="confirmation" class="box d-none fade" style="background-color: var(--primary-green); position: relative; top: -1rem; transition: opacity 0.5s;" data-view-event="newsletter_confirmation">
                             Ora sei dei nostri!<br>
                             <small><strong>Controlla la tua email</strong> e troverai il link per ascoltare l'intero album.</small>
                         </div>
 
-                        <div id="error" class="box-alt d-none fade" style="background-color: var(--primary-red); position: relative; top: -1rem; transition: opacity 0.5s;">
+                        <div id="error" class="box-alt d-none fade" style="background-color: var(--primary-red); position: relative; top: -1rem; transition: opacity 0.5s;" data-view-event="newletter_error">
                             Ops! 
                             <small><strong>Qualcosa è andato storto.</strong> Controlla l'indirizzo email o riprova più tardi.</small>
                         </div>
@@ -636,7 +636,7 @@ h2, .display-2 {
                     <div class="col-lg-1"></div>
 
                     <div class="col-8 col-md-6 col-lg-4">
-                        <div class="box-alt">
+                        <div class="box-alt" data-view-event="preview_banner">
                             Iscriviti adesso
                             <small> per ricevere subito l'<strong>album completo</strong>, <strong>contenuti esclusivi</strong> futuri e poter <strong>influenzare i progressi</strong> del <em>Baby Album</em> fino alla sua uscita ufficiale. 🎶✨</small>
                         </div>
@@ -656,51 +656,51 @@ h2, .display-2 {
                 <div class="col-md-10 col-lg-6 accordion" id="faqAccordion">
                     <!-- FAQ 1 -->
                     <div class="boxed mb-3">
-                        <button class="faq-btn" data-bs-toggle="collapse" data-bs-target="#faq1">
+                        <button class="faq-btn" data-bs-toggle="collapse" data-bs-target="#faq1" data-view-event="faq_eta">
                             Per che età è adatto l’album?
                         </button>
                         <div id="faq1" class="collapse" data-bs-parent="#faqAccordion">
-                            <p class="faq-text">Il <em>Baby Album</em> è pensato per bambini dai <strong>1 ai 5 anni</strong>, con canzoni che stimolano la fantasia e il movimento. 🎶✨</p>
+                            <p class="faq-text" data-view-event="faq_eta-click">Il <em>Baby Album</em> è pensato per bambini dai <strong>1 ai 5 anni</strong>, con canzoni che stimolano la fantasia e il movimento. 🎶✨</p>
                         </div>
                     </div>
 
                     <!-- FAQ 2 -->
                     <div class="boxed mb-3">
-                        <button class="faq-btn" data-bs-toggle="collapse" data-bs-target="#faq2">
+                        <button class="faq-btn" data-bs-toggle="collapse" data-bs-target="#faq2" data-view-event="faq_contribuire">
                             Come posso contribuire al progetto?
                         </button>
                         <div id="faq2" class="collapse" data-bs-parent="#faqAccordion">
-                            <p class="faq-text">Ti invieremo <strong>sondaggi esclusivi</strong> per aiutare a scegliere dettagli come la copertina o i video musicali. Il tuo parere conta! 🎨📩</p>
+                            <p class="faq-text" data-view-event="faq_contribuire-click">Ti invieremo <strong>sondaggi esclusivi</strong> per aiutare a scegliere dettagli come la copertina o i video musicali. Il tuo parere conta! 🎨📩</p>
                         </div>
                     </div>
 
                     <!-- FAQ 3 -->
                     <div class="boxed mb-3">
-                        <button class="faq-btn" data-bs-toggle="collapse" data-bs-target="#faq3">
+                        <button class="faq-btn" data-bs-toggle="collapse" data-bs-target="#faq3" data-view-event="faq_spotify">
                             Posso ascoltarlo su Spotify?
                         </button>
                         <div id="faq3" class="collapse" data-bs-parent="#faqAccordion">
-                            <p class="faq-text">Non ancora! Per ora è disponibile <strong>solo su SoundCloud</strong>, perché stiamo perfezionando l’album grazie ai tuoi feedback. 🚀🎧</p>
+                            <p class="faq-text" data-view-event="faq_spoify-click">Non ancora! Per ora è disponibile <strong>solo su SoundCloud</strong>, perché stiamo perfezionando l’album grazie ai tuoi feedback. 🚀🎧</p>
                         </div>
                     </div>
 
                     <!-- FAQ 4 -->
                     <div class="boxed mb-3">
-                        <button class="faq-btn" data-bs-toggle="collapse" data-bs-target="#faq4">
+                        <button class="faq-btn" data-bs-toggle="collapse" data-bs-target="#faq4" data-view-event="faq_gratis">
                             È gratuito?
                         </button>
                         <div id="faq4" class="collapse" data-bs-parent="#faqAccordion">
-                            <p class="faq-text">Sì, l’anteprima è <strong>completamente gratuita</strong>. Ti basta registrarti per ricevere il link di ascolto. 🆓🎵</p>
+                            <p class="faq-text" data-view-event="faq_gratis-click">Sì, l’anteprima è <strong>completamente gratuita</strong>. Ti basta registrarti per ricevere il link di ascolto. 🆓🎵</p>
                         </div>
                     </div>
 
                     <!-- FAQ 5 -->
                     <div class="boxed">
-                        <button class="faq-btn" data-bs-toggle="collapse" data-bs-target="#faq5">
+                        <button class="faq-btn" data-bs-toggle="collapse" data-bs-target="#faq5" data-view-event="faq_condividere">
                             Posso condividerlo con altri genitori?
                         </button>
                         <div id="faq5" class="collapse" data-bs-parent="#faqAccordion">
-                            <p class="faq-text">Certo! Manda il link a questa pagina a chi potrebbe apprezzare un’alternativa musicale per i più piccoli. 🎁👶</p>
+                            <p class="faq-text" data-view-event="faq_condividere-click">Certo! Manda il link a questa pagina a chi potrebbe apprezzare un’alternativa musicale per i più piccoli. 🎁👶</p>
                         </div>
                     </div>
                 </div>
@@ -723,7 +723,7 @@ h2, .display-2 {
 
                     <div class="col-8 col-md-6 col-lg-4">
                         <div class="box-alt" style="position: relative; top: 1.4rem; background-color: var(--primary-green);">
-                            <small>
+                            <small data-view-event="footer_credits">
                                 Nebil Kriedi e Filippo Ghezzo si identificano come autori e 
                                 proprietari dell'opera Little Billies. Tutti i diritti riservati.
                                 <b>littlebilliesofficial@gmail.com</b>
@@ -739,14 +739,15 @@ h2, .display-2 {
                 </div>
 
                 <div class="row align-items-center justify-content-center g-3">
-                    <div class="col"><b>Wow. Sei arrviato a fine pagina.<br><a href="#">Torna all'inizio</a>.</b></div>
+                    <div class="col"><b>Wow. Sei arrviato a fine pagina.<br><a href="#" data-click-event="footer_back_to_top">Torna all'inizio</a>.</b></div>
                 </div>
             </div>
       </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="subscribe.js"></script>
+    <script src="scripts/subscribe.js"></script>
+    <script src="scripts/analytics.js"></script>
     <script src="https://www.google.com/recaptcha/api.js?render=6LcZP9MqAAAAAMIwTVwdwc16UoEBY2ZHPr64bheQ" async defer></script>
 </body>
 </html>
