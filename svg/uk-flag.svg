@@ -1,0 +1,23 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sfondo blu pieno -->
+  <rect x="0" y="0" width="64" height="64" fill="#012169"/>
+  
+  <!-- Bordo fumettistico (esterno) -->
+  <rect x="2" y="2" width="60" height="60" rx="8" ry="8" fill="none" stroke="#000" stroke-width="3" filter="url(#cartoon)"/>
+  
+  <!-- Diagonali bianche (parte della Union Jack) -->
+  <polygon points="0,0 32,32 0,64" fill="white"/>
+  <polygon points="64,0 32,32 64,64" fill="white"/>
+  
+  <!-- Diagonali rosse (interni alle diagonali bianche) -->
+  <polygon points="0,6 32,32 0,58" fill="#C8102E"/>
+  <polygon points="64,6 32,32 64,58" fill="#C8102E"/>
+  
+  <!-- Croce bianca centrale (verticale e orizzontale) -->
+  <rect x="28" y="0" width="8" height="64" fill="white"/>
+  <rect x="0" y="28" width="64" height="8" fill="white"/>
+  
+  <!-- Croce rossa centrale (sovrapposta a quella bianca) -->
+  <rect x="30" y="0" width="4" height="64" fill="#C8102E"/>
+  <rect x="0" y="30" width="64" height="4" fill="#C8102E"/>
+</svg>

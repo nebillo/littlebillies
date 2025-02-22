@@ -1,0 +1,12 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  
+  <!-- Contorno arrotondato in stile fumetto -->
+  <rect x="2" y="2" width="60" height="60" rx="8" ry="8" fill="none" stroke="#000" stroke-width="3" filter="url(#cartoon)"/>
+  
+  <!-- Striscia verde -->
+  <rect x="4" y="4" width="18.67" height="56" rx="4" ry="4" fill="#009246"/>
+  <!-- Striscia bianca -->
+  <rect x="22.67" y="4" width="18.67" height="56" rx="4" ry="4" fill="#F1F2F1"/>
+  <!-- Striscia rossa -->
+  <rect x="41.33" y="4" width="18.67" height="56" rx="4" ry="4" fill="#CE2B37"/>
+</svg>
