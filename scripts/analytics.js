@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
           class: entry.target.className || null
         });
         // Se vuoi tracciare l'evento solo la prima volta, disattiva l'osservazione
-        obs.unobserve(entry.target);
+        // obs.unobserve(entry.target);
       }
     });
   });
