@@ -51,11 +51,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 if (response.ok && result.success) {
                     // ✅ Successo: svuota i campi e mostra il messaggio verde
+                    heap.track(`view: newsletter_confirmation`, {
+                        name: formData.name,
+                        email: formData.email
+                    });
+
                     form.querySelector("#firstname").value = "";
                     form.querySelector("#email").value = "";
                     showMessage(confirmationBox);
                 } else {
                     // ❌ Errore: mostra il messaggio rosso senza svuotare i campi
+                    heap.track(`view: newsletter_error`, {
+                        name: formData.name,
+                        email: formData.email
+                    });
+                    
                     showMessage(errorBox);
                 }
             });
