@@ -29,50 +29,68 @@ document.addEventListener("DOMContentLoaded", function () {
         try {
             // Esegui reCAPTCHA v3 e ottieni il token
             grecaptcha.ready(async function () {
-                const token = await grecaptcha.execute("6LcZP9MqAAAAAMIwTVwdwc16UoEBY2ZHPr64bheQ", { action: "subscribe" });
+                try {
+                    const token = await grecaptcha.execute("6LcZP9MqAAAAAMIwTVwdwc16UoEBY2ZHPr64bheQ", { action: "subscribe" });
 
-                // Ottieni i dati dal form
-                const formData = {
-                    name: form.querySelector("#firstname").value.trim(),
-                    email: form.querySelector("#email").value.trim(),
-                    recaptcha_token: token // Aggiungi il token al payload
-                };
+                    // Ottieni i dati dal form
+                    const formData = {
+                        name: form.querySelector("#firstname").value.trim(),
+                        email: form.querySelector("#email").value.trim(),
+                        recaptcha_token: token // Aggiungi il token al payload
+                    };
 
-                // Invia i dati con Fetch API
-                const response = await fetch("https://nebilmattia.com/subscribe.php", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(formData),
-                });
-
-                const result = await response.json();
-
-                if (response.ok && result.success) {
-                    // ✅ Successo: svuota i campi e mostra il messaggio verde
-                    heap.track(`view: newsletter_confirmation`, {
-                        name: formData.name,
-                        email: formData.email
+                    // Invia i dati con Fetch API
+                    const response = await fetch("https://nebilmattia.com/subscribe.php", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(formData),
                     });
 
-                    form.querySelector("#firstname").value = "";
-                    form.querySelector("#email").value = "";
-                    showMessage(confirmationBox);
-                } else {
-                    // ❌ Errore: mostra il messaggio rosso senza svuotare i campi
+                    let responseText = "";
+                    try {
+                        responseText = await response.text(); // Legge il contenuto della response
+                    } catch (err) {
+                        responseText = "Impossibile leggere il contenuto della risposta.";
+                    }
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status} - Response: ${responseText}`);
+                    }
+
+                    const result = JSON.parse(responseText); // Parsing manuale del JSON
+
+                    if (result.success) {
+                        // ✅ Successo: svuota i campi e mostra il messaggio verde
+                        heap.track(`view: newsletter_confirmation`, {
+                            name: formData.name,
+                            email: formData.email
+                        });
+
+                        form.querySelector("#firstname").value = "";
+                        form.querySelector("#email").value = "";
+                        showMessage(confirmationBox);
+                    } else {
+                        throw new Error(`API response was not successful: ${responseText}`);
+                    }
+
+                } catch (error) {
+                    // ❌ Errore di rete o API fallita
+                    console.error("Errore nella richiesta API:", error);
+
                     heap.track(`view: newsletter_error`, {
-                        name: formData.name,
-                        email: formData.email
+                        name: form.querySelector("#firstname").value.trim(),
+                        email: form.querySelector("#email").value.trim()
                     });
-                    
+
                     showMessage(errorBox);
                 }
             });
 
         } catch (error) {
-            // ❌ Errore di rete
-            showMessage(errorBox);
+            // ❌ Errore che avviene PRIMA di chiamare grecaptcha
+            console.error("Errore nel blocco principale:", error);
         }
 
         // Riabilita il bottone
